@@ -1,0 +1,62 @@
+<nav class="Page-nav">
+    <!--<img src="/static/images/example_logo.svg" />-->
+    <h1 class="u--desktop">Foundations <br /><span class="of">of</span><br /> Web Design</h1>
+    <div class="u--mobile">
+        <!--<button  class="Page-navToggle"
+        onClick="querySelector('#nav').classList.toggle('Page-nav--visible')">&#9776;</button>-->
+        <h1>Foundations of Web Design</h1>
+    </div>
+    <ul>
+        {% for page in script.navigation %}
+            <li>
+                {% if page.divider %}
+                    <h2>{{ page.title }}</h2>
+                {% endif %}
+                {% if page.file %}
+                    <a href="{% if page.style != "link" %}/{% endif %}{{ page.file }}"
+                        title="{{ page.title }}"
+                        class="
+                            Page-navLink
+                            {% if page.file == props.navselected %}Page-navLink--selected{% endif %}
+                            {% if page.style %}Page-navLink--{{ page.style }}{% endif %}
+                        ">
+                        {{ page.title }}
+                    </a>
+                {% endif %}
+                {% if page.module %}
+                    <a href="/foundations/{{ page.module }}/"
+                        title="{{ page.title }}"
+                        class="
+                            Page-navLink
+                            {% if page.module in props.navselected %}Page-navLink--selected{% endif %}
+                        ">
+                        <span class="Page-navLinkModule">{{ page.module }}</span>
+                        {% comment %}
+                        {% if page.completion is 0 %}&#x25CB;{% endif %}
+                        {% if page.completion %}
+                            {% if page.completion gt 90 %}&#x25CF;
+                            {% elif page.completion gt 70 %}&#x25D5;
+                            {% elif page.completion gt 40 %}&#x25D1;
+                            {% elif page.completion gt 20 %}&#x25D4;{% endif %}
+                        {% endif %}
+                        {% endcomment %}
+                        {{ page.title }}
+                    </a>
+                    {% if page.module in props.navselected %}
+                        {% if props.subnav %}
+                            {% for subnav in props.subnav %}
+                              <a href="#{{ subnav.slug }}"
+                                  title="{{ subnav.title }}"
+                                  class="subnav">
+                                  {% if subnav.slug == script.hash %}&bull;{% endif %}
+                                  {{ subnav.title }}
+                              </a>
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+

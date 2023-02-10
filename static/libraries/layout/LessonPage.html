@@ -1,0 +1,68 @@
+<x-Page navselected="{{ script.path }}" title="{{ script.title }}" subnav:="{{ script.subnav|json }}">
+
+<h1>{{ script.module }} - {{ script.title }}</h1>
+
+<a name="introduction"></a>
+
+{# Add in extra stuff at top #}
+<slot></slot>
+
+{# Now loop through activities #}
+{% for act in script.activities %}
+    <a name="{{ act.slug }}"></a>
+    <div class="LessonPage-activity">
+        <h2>{{ act.title }}</h2>
+        <figure>
+            <img src="/__screenshot{{ act.solutionPath }}.png" />
+            <a href="{{ act.solutionPath }}">View {{ act.title }} Solution</a>
+        </figure>
+        <aside>
+            <div class="slide-card">
+                <div class="slide-preview">
+                    <x-Markdown 
+                        slideshow:=true
+                        firstslide:=true
+                        src="{{ act.instructionsPath }}"
+                    ></x-Markdown>
+                </div>
+                <a href="/slides.html?title={{ act.title }}&path={{ act.instructionsPath }}">
+                    View {{ act.title }} Slides
+                </a>
+            </div>
+            <!--
+            <a class="Btn" href="/slides.html?path={{ act.instructionsPathRawAbs }}">{{ act.title }} Instruction Slides</a>
+            <a class="Btn" href="/slides.html?path={{ act.instructionsPathRawAbs }}">Open {{ act.title }} In Web Editor</a>
+            -->
+            <ul>
+                <li>
+                    <a href="{{ act.instructionsPathRawAbs }}">Open {{ act.title }} instructions (raw markdown, GitHub) &raquo;</a>
+                </li>
+                <li>
+                    <a href="{{ act.filesPathRawAbs }}">View {{ act.title }} code files (GitHub) &raquo;</a>
+                </li>
+            </ul>
+        </aside>
+
+        {% comment %}
+            <x-Markdown 
+                slideshow:=true
+                src="{{ act.instructionsPath }}"
+            ></x-Markdown>
+        {% endcomment %}
+        {% comment %}
+        <!--<x-Btn payload="act.instructionsPath">Open {{ act.instructionsPath }}</x-Btn>-->
+        <div class="LessonPage-activity" style="background-image: url('/__screenshot{{ act.solutionPath }}.png')">
+        (opens in modal) <a href="#">Open {{ act.instructionsPath }}</a>
+        (opens in modal) <a href="#">Edit in web Editor</a>
+        {% if act.instructionsPath %}
+            <x-Markdown 
+                slideshow:=true
+                src="{{ act.instructionsPath }}"
+            ></x-Markdown>
+        {% endif %}
+        <a href="/editor.html?file={{ act.solutionPath }}">Edit in Web Editor</a>
+        {% endcomment %}
+    </div>
+{% endfor %}
+</x-Page>
+

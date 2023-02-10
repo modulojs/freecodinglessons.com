@@ -1,0 +1,74 @@
+<Component name="Page" mode="vanish-into-document">
+    <Props
+        title
+        navselected
+        subnav
+    ></Props>
+    <Template
+        -src="/static/libraries/layout/Page.html"
+    ></Template>
+    <Script
+        -src="/static/libraries/layout/Page.js"
+    ></Script>
+    <Style
+        -src="/static/libraries/layout/Page.css"
+    ></Style>
+</Component>
+
+
+<Component name="LessonPage" mode="vanish-into-document">
+    <Props
+        path
+    ></Props>
+
+    <Template
+        -src="/static/libraries/layout/LessonPage.html"
+    ></Template>
+
+    <StaticData
+        -src="/__dirlist/foundations.json"
+    ></StaticData>
+
+    <Script
+        -src="/static/libraries/layout/LessonPage.js"
+    ></Script>
+
+    <Style
+        -src="/static/libraries/layout/LessonPage.css"
+    ></Style>
+</Component>
+
+
+<Component name="LessonNav">
+    <Props
+        navselected
+        subnav
+    ></Props>
+    <Template
+        -src="/static/libraries/layout/LessonNav.html"
+    ></Template>
+    <Script
+        -src="/static/libraries/layout/LessonNav.js"
+    ></Script>
+    <Style
+        -src="/static/libraries/layout/LessonNav.css"
+    ></Style>
+</Component>
+
+
+<Component name="LandingPage" mode="vanish-into-document">
+    <Props
+        title
+        cls
+    ></Props>
+    <Template
+        -src="/static/libraries/layout/LandingPage.html"
+    ></Template>
+    <Style
+        -src="/static/libraries/layout/LandingPage.css"
+    ></Style>
+    <Script
+        -src="/static/libraries/layout/Page.js"
+    ></Script>
+</Component>
+

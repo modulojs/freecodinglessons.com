@@ -1,0 +1,125 @@
+.LessonPage-activity {
+    --activity-shadow-color: #00000022;
+    --activity-shadow-spread: 2px;
+    --hover-shadow-color: #00000022;
+    --hover-shadow-spread: 5px;
+    --subtle-shadow-color: #0698DC22;
+    --subtle-shadow-spread: 75px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 2px  2px var(--activity-shadow-spread) inset var(--activity-shadow-color),
+               -2px -2px var(--activity-shadow-spread) inset var(--activity-shadow-color),
+                3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color);
+    border: 1px solid #00000016;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.LessonPage-activity h2 {
+    margin: 0;
+    padding: 3px;
+    background: var(--activity-shadow-color);
+    display: block;
+}
+
+.LessonPage-activity h2:first-child {
+    margin: -20px;
+    margin-bottom: 5px;
+    padding: 22px;
+    grid-column: span 2;
+}
+
+.LessonPage-activity > figure {
+    display: block;
+    max-width: 1044px;
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 
+               -3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color);
+}
+
+.LessonPage-activity > figure > img {
+    max-width: 100%;
+    border: 1px solid var(--activity-shadow-color);
+}
+
+.LessonPage-activity > figure a {
+    position: absolute;
+    bottom: 10px;
+    left: -2px;
+    height: 35px;
+    width: calc(100% + 4px);
+    text-align: center;
+    background: var(--activity-shadow-color);
+    font-weight: bold;
+    /*color: #888; */
+    padding: 5px;
+    transition: box-shadow 0.2s;
+
+    box-shadow: 3px  3px var(--subtle-shadow-spread) inset var(--subtle-shadow-color),
+               -3px -3px var(--subtle-shadow-spread) inset var(--subtle-shadow-color),
+                3px  3px var(--subtle-shadow-spread)       var(--subtle-shadow-color),
+               -3px -3px var(--subtle-shadow-spread)       var(--subtle-shadow-color);
+}
+
+
+.slide-card {
+    display: block;
+    max-width: 1044px;
+    padding: 20px;
+    position: relative;
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 
+               -1px  1px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                1px -1px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                1px  1px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -1px -1px var(--activity-shadow-spread)       var(--activity-shadow-color);
+}
+
+.slide-preview {
+    height: 250px;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.slide-card > a {
+    position: absolute;
+    bottom: 10px;
+    left: 2px;
+    height: calc(100% - 30px);
+    padding: 5px;
+    padding-top: 250px;
+    width: calc(100% - 4px);
+    text-align: center;
+    transition:
+        background 0.3s,
+        box-shadow 0.3s;
+    background: linear-gradient(#ffffff00, #fff);
+    font-weight: bold;
+    box-shadow: 
+               -1px  1px var(--activity-shadow-spread)       #fff,
+                1px -1px var(--activity-shadow-spread)       #fff,
+                1px  1px var(--activity-shadow-spread)       #fff,
+               -1px -1px var(--activity-shadow-spread)       #fff;
+}
+
+.slide-card > a:hover {
+    background: linear-gradient(var(--subtle-shadow-color), #fff);
+    box-shadow: 3px  3px var(--subtle-shadow-spread)       var(--subtle-shadow-color),
+               -3px -3px var(--subtle-shadow-spread)       var(--subtle-shadow-color);
+}
+
+/*
+.LessonPage-activity > figure a:hover {
+}
+*/

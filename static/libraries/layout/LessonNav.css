@@ -1,0 +1,119 @@
+:host {
+    text-align: right;
+}
+
+nav {
+}
+
+ul {
+    position: sticky;
+    top: 0;
+}
+
+li {
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+h1,
+h2 {
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000,
+				-1px -1px 0 #000;
+}
+
+h2 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h1 .of {
+    font-size: 3.0rem;
+    font-style: italic;
+    font-weight: 100;
+    font-family: cursive, serif;
+    text-align: center;
+}
+
+.Page-navLink {
+    color: black;
+    font-size: 1.4rem;
+    border: 2px solid var(--bordercolor);
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 5px var(--bordercolor);
+    background: white;
+    padding-left: 12px;
+}
+
+.Page-navLink--link {
+    color: var(--primary);
+    font-size: 1.01rem;
+    border: none;
+    display: block;
+    padding: 0;
+    text-decoration: underline;
+    box-shadow: none;
+    background: none;
+    padding-left: 12px;
+
+}
+
+.Page-navLink--selected {
+    background-color: var(--primary);
+    color: white;
+}
+
+.Page-navLink--selected .Page-navLinkModule {
+	text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000;
+				-1px -1px 0 #000;
+}
+
+.Page-navLinkModule {
+    font-weight: 800;
+    font-size: 1.8rem;
+    display: inline-block;
+    position: absolute;
+    left: -19px;
+    padding: 2px;
+    box-shadow: 0 0 0 5px var(--bordercolor);
+    background: var(--bordercolor);
+}
+
+.Page-navLink:hover {
+    border-color: var(--primary);
+}
+
+.Page-navLink--selected {
+}
+
+.subnav {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--bordercolor);
+    display: block;
+    padding: 5px;
+    padding-left: 12px;
+    background: var(--bordercolor);
+    font-weight: bold;
+    color: white;
+}
+

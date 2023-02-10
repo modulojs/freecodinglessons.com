@@ -1,0 +1,88 @@
+:root {
+    --bluebird: #19B5FE;
+    --cerulean: #0698DC;
+    --sunshine: #FFD300;
+    --golden: #D9A400;
+    --white: #ffffff;
+    --primary: var(--cerulean);
+    --bordercolor: rgba(127, 127, 127, 0.5);
+    --sidebar-width: 280px;
+}
+
+html {
+    font-family: sans-serif;
+    background: url('/static/images/lowpoly_x4.jpg');
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+.Page-container {
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width) minmax(auto, 1920px) 1fr;
+    grid-template-rows: auto;
+    min-height: calc(100vh - 120px); /* 100px for footer */
+}
+
+.Page-container > :first-child {
+    grid-column: 2; /* First column is being used as margin */
+}
+
+.Page-mainContent {
+    grid-column: 3;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0;
+    box-shadow: 5px 5px 0 10px var(--bordercolor);
+    background: var(--white);
+}
+
+.Page-mainContent h1 {
+    border-bottom: 1px dotted var(--bordercolor);
+}
+
+.Page-mainContent code {
+    border-bottom: 1px dashed gray;
+}
+
+.Page-mainContent > slot > img {
+    min-height: 100px;
+}
+
+.Page-footer {
+    height: 100px;
+    text-align: center;
+    padding-top: 30px
+}
+
+.u--mobile {
+    display: none;
+}
+
+.u--desktop {
+    display: block;
+}
+
+.Page-toolbar {
+    padding: 5px;
+    background: var(--bordercolor);
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .Page-container {
+        display: block;
+    }
+    .u--mobile {
+        display: block;
+    }
+    .u--desktop {
+        display: none;
+    }
+}

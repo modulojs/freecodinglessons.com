@@ -1,0 +1,247 @@
+<script Configuration -src="https://unpkg.com/snarkdown">
+    let defaultOptions = { allowNamespace: 'x' };
+    function _replaceSigiledElements(html, sigil, elemPrefix) {
+        const lines = (html + '\n\n').split('\n'); // add space at end
+        let moduloRun = '';
+        let componentName = '';
+        let inBody = false;
+        let componentBody = [];
+        const results = [];
+        for (const line of lines) {
+            if (line.startsWith('%')) { // Modulo CMD
+                const content = line.replace(/^% ?/, ''); // Collapse 1 space
+                if (!componentName) {
+                    // Starting a new component
+                    componentName = options.elementPrefix + content;
+                    results.push('<' + componentName);
+                } else if (inBody) {
+                    // Already in a component body, should always assume body
+                    results.push(content);
+                } else if (content.startsWith(' ')) { // At least 2 spaces
+                    // Not in body, but space prefixed, is attribute
+                    results.push(content);
+                    // TODO: Maybe apply regexp to content to ensure attribute?
+                } else {
+                    // Not in body, but starting body, so close opening tag
+                    inBody = true;
+                    results.push('>');
+                    results.push(content);
+                }
+            } else if (componentName) {
+                results.push('</' + componentName + '>');
+            } else {
+                results.push(line);
+            }
+        }
+        return results.join('\n');
+    }
+
+    function _splitAndWrap(splitBy, wrappingTag, innerTag, html) {
+        const splitSlides = html.split(splitBy); // Split by ----
+        html = `<${ wrappingTag }>\n`; // Open wrapping tag
+        for (const slideContent of splitSlides) { // Loop through slides
+            html += `<${ innerTag }>\n${ slideContent }\n</${ innerTag }>`;
+        }
+        return html + `\n</${ wrappingTag }>`; // Close wrapping tag
+    }
+
+    function moduloMarkdown(source, options = defaultOptions) {
+        // Unescape
+        source = source.replace(/&gt;/gi, '>').replace(/&lt;/gi, '<');
+        let html = snarkdown(source);
+        if (options.allowNamespace) {
+            html = _replaceSigiledElements(html, '%', options.allowNamespace + '-');
+        }
+        if (options.slideshow) {
+            let { slideshow, slide } = options;
+            if (slideshow === true) { // "slideshow: true" is default opts
+                slideshow = 'x-SlideShow';
+                slide = 'x-Slide';
+            }
+            html = _splitAndWrap(/<hr *\/?>/ig, slideshow, slide, html);
+        }
+        return html;
+    }
+
+    modulo.register('util', snarkdown);
+    modulo.register('util', moduloMarkdown);
+</script>
+
+
+<!-- Create a simple Markdown component that wraps around moduloMarkdown -->
+<Component name="Markdown">
+    <Props
+        slideshow
+        firstslide
+        src
+    ></Props>
+    <State
+        results:=null
+        source:=null
+    ></State>
+    <Script lifecycle="initialized">
+        const { moduloMarkdown } = modulo.registry.utils;
+        function prepareCallback() {
+            if (props.src && state.source === null) {
+                modulo.fetchQueue.fetch(props.src).then(text => {
+                    state.source = text;
+                    element.rerender();
+                });
+            }
+        }
+
+        function renderCallback() {
+            if (state.source !== null) {
+                const opts = {};
+                if (props.slideshow) {
+                    opts.slideshow = true;
+                }
+                let results = moduloMarkdown(state.source, opts);
+                if (props.firstslide) { // extract first slide content
+                    results = results.split('</x-Slide>')[0];
+                    results = results.replace('<x-SlideShow>', '');
+                    results = results.replace('<x-Slide>', '');
+                }
+                if (results !== state.results) {
+                    state.results = results;
+                    component.innerHTML = results; // cause reconcile
+                }
+            }
+        }
+    </Script>
+</Component>
+
+<Component name="SlideShow">
+    <Template>
+        <div class="toolbar">
+            {% for slide in state.slides %}
+                <button
+                    class="slide-preview {% if slide.isSelected %}slide--selected{% endif %}"
+                    @click:=script.setSlide
+                    payload:='{{ slide.index }}'
+                >{{ slide.html|safe }}</button>
+            {% endfor %}
+        </div>
+        <div class="current-slide-window">
+            <div class="all-slides" style="
+                        --slide-offset: {{ state.offset }};
+                        --slide-count: {{ state.slides|length }};
+                    ">
+                {% for slide in state.slides %}
+                    <div class="slide">{{ slide.html|safe }} </div>
+                {% endfor %}
+            </div>
+        </div>
+    </Template>
+    <State
+        select:=0
+        slides:=[]
+    ></State>
+    <Script lifecycle="initialized">
+        function prepareCallback() {
+            const slides = state.slides;
+            if (!slides.length) {
+                let index = 0;
+                for (const child of element.originalChildren) {
+                    if (!child.isModulo) {
+                        continue; // only get Modulo components as children
+                    }
+                    slides.push({ index, html: child.innerHTML, select: state.select });
+                    index++;
+                }
+            }
+            let offset = 0;
+            for (const slide of slides) {
+                slide.isSelected = slide.index === state.select;
+                if (slide.isSelected) {
+                    offset = slide.index;
+                }
+            }
+            state.slides = slides;
+            state.offset = offset;
+        }
+
+        function setSlide(newIndex) {
+            state.select = newIndex;
+        }
+    </Script>
+
+    <Style>
+        :host {
+            --activity-shadow-color: #00000033;
+            --activity-shadow-spread: 5px;
+            box-sizing: border-box;
+            padding: 2px;
+            position: relative;
+            font-size: 1.5vw;
+            display: block;
+            width: calc(100vw - 20px);
+            height: calc(100vh - 100px);
+        }
+
+        .toolbar {
+            display: block;
+            display: flex;
+            font-size: 0.3vw;
+        }
+
+        .current-slide-window {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .all-slides {
+            margin-left: calc(-100vw * var(--slide-offset));
+            height: 100%;
+            background: #fff;
+            display: flex;
+            width: calc(100vw * var(--slide-count));
+        }
+
+        .slide {
+            box-shadow: 3px 3px var(--activity-shadow-spread) var(--activity-shadow-color);
+            padding: 20px;
+            margin: 1px;
+            border: 1px solid var(--activity-shadow-color);
+            height: 100vh;
+            overflow-y: auto;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+
+        .toolbar button.slide-preview {
+            display: block;
+            overflow: hidden;
+            background: #ffffffaa;
+            max-width: 20%;
+            min-width: 100px;
+            min-height: 100px;
+            max-height: 15vh;
+            border: 2px solid white;
+        }
+
+
+        .toolbar button.slide--selected {
+            background: #fff;
+            border: 2px solid var(--primary);
+            color: #888; /* 50% gray */
+        }
+    </Style>
+</Component>
+
+<Component name="Slide">
+    <Style>
+        :host {
+            --activity-shadow-color: #00000033;
+            --activity-shadow-spread: 5px;
+            display: block;
+            box-shadow: 3px  3px var(--activity-shadow-spread) var(--activity-shadow-color);
+            padding: 20px;
+            margin: 1px;
+            border: 1px solid var(--activity-shadow-color);
+            overflow-y: auto;
+        }
+    </Style>
+</Component>

@@ -1,0 +1,37 @@
+<head>
+    <title>{{ props.title }}</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="/static/css/site.css" />
+</head>
+<body>
+    <div class="Page-container">
+        <x-LessonNav navselected="{{ props.navselected }}" subnav:="{{ props.subnav|json }}"></x-LessonNav>
+
+        <main class="Page-mainContent">
+            <slot></slot>
+        </main>
+        <nav class="Page-toolbar">
+            <abbr class="Page-earlyAccess" title="We haven't finished this new course yet, but we're opening it up to get early feedback! ">Early Access</abbr>
+            <!-- 
+                Later, we'll put sign-in, etc. here
+                - Full feature ideas:
+                - Modulo editor mini? (E.g. share some code with modulo editor)
+                - Signs in to modulo.page (or whatever)
+                - Take notes / highlight page on any URL
+                - Quiz results, etc
+            -->
+        </nav>
+    </div>
+
+    <footer class="Page-footer">
+        &copy; {{ script.currentYear }} Michael Bethencourt
+        %
+        <a href="https://modulojs.org/" title="Made with Modulo.js">
+            A Modulo.js Course
+        </a>
+        %
+        <a href="https://kickstartcoding.com/" title="Hosted by Kickstart Coding">
+            In-person sessions by Kickstart Coding
+        </a>
+    </footer>
+</body>

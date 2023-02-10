@@ -1,0 +1,41 @@
+.font-sans {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-antique {
+    font-family: 'Tapestry', cursive;
+}
+
+.font-fun {
+    font-family: 'Nabla', cursive;
+}
+
+.font-handwritten {
+    font-family: 'Whisper', cursive;
+}
+
+.font-terminal {
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre;
+}
+
+
+h1 {
+    font-size: 28px;
+    font-weight: normal;
+}
+
+div {
+    width: 700px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    background: lavenderblush;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+

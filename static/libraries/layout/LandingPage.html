@@ -1,0 +1,21 @@
+<head>
+    <title>{{ props.title }}</title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="/static/css/site.css" />
+</head>
+<body>
+    <div class="Page-container Page--{{ props.cls|default:"landing" }}">
+      <slot></slot>
+    </div>
+    <footer class="Page-footer">
+        &copy; {{ script.currentYear }} Michael Bethencourt
+        %
+        <a href="https://modulojs.org/" title="Made with Modulo.js">
+            A Modulo.js Course
+        </a>
+        %
+        <a href="https://kickstartcoding.com/" title="Hosted by Kickstart Coding">
+            In-person sessions by Kickstart Coding
+        </a>
+    </footer>
+</body>
