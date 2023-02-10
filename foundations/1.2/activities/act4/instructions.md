@@ -108,9 +108,10 @@ h3 {
 ```
 
 
+-------------
 
 
-Challenge 4: Center-aligning text
+Challenge 4: Crisp Drop Shadows
 ------------------------------------------
 
 Almost done! Our last challenge will be making the paragraphs "pop" a little,

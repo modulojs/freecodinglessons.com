@@ -1,4 +1,4 @@
-# 1.1 - Activity 3 - Style Tag
+# 1.1 - Activity 4 - Body & Background
 
 We'll now learn the CSS properties for changing background colors, and the use
 of the "body" selector to change the background or text color of the entire

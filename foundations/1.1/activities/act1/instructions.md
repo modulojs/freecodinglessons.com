@@ -1,5 +1,4 @@
-1.1 - Activity 1 - Hello Coding World!
-----------------------------------
+# 1.1 - Activity 1 - Hello Coding World!
 
 Programming involves writing "code". Coding is writing a special "language"
 that computers can understand. Throughout the Fundamentals of Web Design

@@ -14,6 +14,7 @@ We've learned how to `<h1>make text bigger</h1>` using h1. We'll now learn the
   signifiy different sections, subsections, subsubsections, etc. H1 is the
   biggest, H6 the smallest.
 
+
 ----------------------------------
 
 
@@ -39,9 +40,11 @@ p-tag for "bananas" to put each other ingredient on a separate paragraph.
 
 * Hint 2: The first three paragraphs will look like:
 
-    <p>3 chopped bananas</p>
-    <p>1 cup blueberries</p>
-    <p>1 sliced apples</p>
+```html
+<p>3 chopped bananas</p>
+<p>1 cup blueberries</p>
+<p>1 sliced apples</p>
+```
 
 
 
@@ -67,6 +70,10 @@ the h1-tag we saw before?
 
 
 
+
+----------------------------------
+
+
 Challenge 3: Other headers
 ----------------------------------
 
@@ -81,13 +88,34 @@ loose text to fix.
 3. Examine the existing code. A lot has been added. Note how some of the text,
 like before, is "loose" and not wrapped in any tag.
 4. The goal for Challenge 3 is to "upgrade" 7 different H-tags:
-    - "Fruit" (H4)
-    - "Liquid" (H4)
+    - "Fruit" (H3)
+    - "Liquid" (H3)
     - "Steps" (H3)
     - "Step 1" (H4)
     - "Step 2" (H4)
     - "Step 3" (H4)
     - "Serving" (H3)
+
+* Hint #1: This might seem tedious, but it's important practice to get used to
+  typing out the tag names and correcting the various mistakes you will make
+  while typing. You will need to get really good at this to succeed in coding!
+
+* Hint #2: Below are some portions of the solution, as a hint:
+
+```html
+<h3>Fruit</h3>
+<p>2 chopped bananas</p>
+
+...
+
+<h3>Steps</h3>
+
+<h4>Step 1</h4>
+<p>Combine in blender.</p>
+
+```
+
+----------------------------------
 
 
 

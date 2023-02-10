@@ -1,19 +1,17 @@
+# Project 2 - Local Business
 
+In this second project, we'll build a simple landing page for a business or
+local store. Some people might use services like Squarespace or Wix to build a
+quick landing page for their small business. This project can replace that with
+a simple center-aligned design. In this design, we also learn how to embed a
+Google Map, allowing potential customers to find us.
 
-## Step 8: Choosing a gradient
-- background: url('https://i.imgur.com/uhGniRq.png');
-- `https://uigradients.com/#PunYeta` - `background: linear-gradient(to right, #108dc7, #ef8e38);`
+## Hints:
 
+- `background: url('https://i.imgur.com/uhGniRq.png');`
 
-- How to 
+- <https://support.google.com/maps/answer/144361>
 
-
-## Step 10: Embedding Google Maps
-
-https://support.google.com/maps/answer/144361?hl=en&co=GENIE.Platform%3DDesktop#:~:text=Embed%20a%20map%20or%20directions&text=the%20embedded%20map.-,Open%20Google%20Maps.,you'd%20like%20to%20embed.&text=Click%20Share%20or%20embed%20map,Click%20Embed%20map.
-
-
-
-
+### Can you build the design by looking at the solution?
 
 

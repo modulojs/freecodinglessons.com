@@ -82,30 +82,34 @@
     <Script lifecycle="initialized">
         const { moduloMarkdown } = modulo.registry.utils;
         function prepareCallback() {
+            // TODO: Why is lifecycle="inititalized" not working..?
+            const myState = state;
+            const myElement = element;
             if (props.src && state.source === null) {
                 modulo.fetchQueue.fetch(props.src).then(text => {
-                    state.source = text;
-                    element.rerender();
+                    myState.source = text;
+                    myElement.rerender();
                 });
             }
         }
 
         function renderCallback() {
-            if (state.source !== null) {
-                const opts = {};
-                if (props.slideshow) {
-                    opts.slideshow = true;
-                }
-                let results = moduloMarkdown(state.source, opts);
-                if (props.firstslide) { // extract first slide content
-                    results = results.split('</x-Slide>')[0];
-                    results = results.replace('<x-SlideShow>', '');
-                    results = results.replace('<x-Slide>', '');
-                }
-                if (results !== state.results) {
-                    state.results = results;
-                    component.innerHTML = results; // cause reconcile
-                }
+            if (state.source === null) {
+                return;
+            }
+            const opts = {};
+            if (props.slideshow) {
+                opts.slideshow = true;
+            }
+            let results = moduloMarkdown(state.source, opts);
+            if (props.firstslide) { // extract first slide content
+                results = results.split('</x-Slide>')[0];
+                results = results.replace('<x-SlideShow>', '');
+                results = results.replace('<x-Slide>', '');
+            }
+            if (results !== state.results) {
+                state.results = results;
+                component.innerHTML = results; // cause reconcile
             }
         }
     </Script>

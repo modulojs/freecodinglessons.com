@@ -122,6 +122,7 @@ h1 {
 }
 ```
 
+-------------
 
 
 Challenge 4: Center-aligning text

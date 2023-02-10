@@ -12,10 +12,6 @@
     <a name="{{ act.slug }}"></a>
     <div class="LessonPage-activity">
         <h2>{{ act.title }}</h2>
-        <figure>
-            <img src="/__screenshot{{ act.solutionPath }}.png" />
-            <a href="{{ act.solutionPath }}">View {{ act.title }} Solution</a>
-        </figure>
         <aside>
             <div class="slide-card">
                 <div class="slide-preview">
@@ -42,6 +38,10 @@
                 </li>
             </ul>
         </aside>
+        <figure>
+            <img src="/__screenshot{{ act.solutionPath }}.png" />
+            <a href="{{ act.solutionPath }}">View {{ act.title }} Solution</a>
+        </figure>
 
         {% comment %}
             <x-Markdown 
