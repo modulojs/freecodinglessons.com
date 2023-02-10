@@ -1,92 +1,40 @@
-<!DOCTYPE HTML><html><head>
+<!DOCTYPE html>
 
+<style>
+    body {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
 
+<script Modulo src="/static/js/Modulo.js" -src="/static/libraries/">
+    <Component name="SlideWrapper">
+        <Template>
+            <x-LandingPage title="{{ script.title }} - Slides" cls="slides">
+                <x-Markdown 
+                    slideshow:=true
+                    src="{{ script.path }}"
+                ></x-Markdown>
+            </x-LandingPage>
+        </Template>
 
-<title>undefined - Slides</title><meta charset="utf8"><link rel="stylesheet" href="/_modulo/modulo-build-x1blpe3k.css" /></head><body>
-    
-    
-    
+        <cpart Script>
+            function prepareCallback () {
+                // TODO: Switch to using GetParams
+                const urlParams = new URLSearchParams(window.location.search);
+                let title;
+                let path;
+                if (urlParams.has('title')) {
+                    title = urlParams.get('title');
+                }
+                if (urlParams.has('path')) {
+                    path = urlParams.get('path');
+                }
+                return { title, path };
+            }
+        </cpart>
+    </Component>
+</script>
 
-
-    <div class="Page-container Page--slides">
-      <slot>
-                <x-markdown slideshow:="true" src="undefined" modulo-original-html=""><x-slideshow modulo-original-html="
-<x-slide>
-
-
-
-<meta charset=&quot;utf-8&quot;>
-<title>Error</title>
-
-
-<pre>Cannot GET /undefined</pre>
-
-
-</x-slide>
-">
-        <div class="toolbar">
-            
-                <button class="slide-preview slide--selected" @click:="script.setSlide" payload:="0">
-
-
-
-<meta charset="utf-8">
-<title>Error</title>
-
-
-<pre>Cannot GET /undefined</pre>
-
-
-</button>
-            
-        </div>
-        <div class="current-slide-window">
-            <div class="all-slides" style="
-                        --slide-offset: 0;
-                        --slide-count: 1;
-                    ">
-                
-                    <div class="slide-wrapper">
-                        <div class="slide">
-                            
-
-
-
-<meta charset="utf-8">
-<title>Error</title>
-
-
-<pre>Cannot GET /undefined</pre>
-
-
-
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    </x-slideshow></x-markdown>
-            </slot>
-    </div>
-    <footer class="Page-footer">
-        © 2023 Michael Bethencourt
-        %
-        <a href="https://modulojs.org/" title="Made with Modulo.js">
-            A Modulo.js Course
-        </a>
-        %
-        <a href="https://kickstartcoding.com/" title="Hosted by Kickstart Coding">
-            In-person sessions by Kickstart Coding
-        </a>
-    </footer>
-
-<script src="/_modulo/modulo-build-x1g8cr16.js"></script><script>window.moduloBuild && modulo.start(window.moduloBuild);
-modulo.assets.require("library1_configuration");
-modulo.assets.require("SlideWrapper");
-modulo.assets.require("library_Page");
-modulo.assets.require("library_LessonPage");
-modulo.assets.require("library_LessonNav");
-modulo.assets.require("library_LandingPage");
-modulo.assets.require("library1_Markdown");
-modulo.assets.require("library1_SlideShow");
-modulo.assets.require("library1_Slide");</script></body></html>
+<x-SlideWrapper></x-SlideWrapper>

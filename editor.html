@@ -1,49 +1,60 @@
-<!DOCTYPE HTML><html><head>
+<!DOCTYPE html>
 
 
+<!DOCTYPE html>
 
-<title>Editor - Slides</title><meta charset="utf8"><link rel="stylesheet" href="/_modulo/modulo-build-xx435p90.css" /></head><body>
-    
-    
-    
+<style>
+    body {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
 
+<script Modulo src="/static/js/Modulo.js" -src="/static/libraries/">
+    <Library
+        -src="https://unpkg.com/mdu.js@0.0.32/mdu/libraries/editorlib.html" 
+    ></Library>
+    <Library
+        -src="https://unpkg.com/mdu.js@0.0.32/mdu/libraries/widgetslib.html" 
+    ></Library>
 
-    <div class="Page-container Page--slides">
-      <slot>
-                
-                
-            </slot>
-    </div>
-    <footer class="Page-footer">
-        © 2023 Michael Bethencourt
-        %
-        <a href="https://modulojs.org/" title="Made with Modulo.js">
-            A Modulo.js Course
-        </a>
-        %
-        <a href="https://kickstartcoding.com/" title="Hosted by Kickstart Coding">
-            In-person sessions by Kickstart Coding
-        </a>
-    </footer>
+    <Component name="SlideWrapper">
+        <Template>
+            <x-LandingPage title="{{ script.title }} - Slides" cls="slides">
+                {% if script.instructions %}
+                    <x-Markdown 
+                        src="{{ script.instructions }}"
+                    ></x-Markdown>
+                {% endif %}
+                {% if script.files %}
+                    <x-ModuloEditor
+                        files:=script.files
+                    ></x-ModuloEditor>
+                {% endif %}
+            </x-LandingPage>
+        </Template>
 
-<script src="/_modulo/modulo-build-xx730mr8.js"></script><script>window.moduloBuild && modulo.start(window.moduloBuild);
-modulo.assets.require("library_configuration");
-modulo.assets.require("library3_configuration");
-modulo.assets.require("SlideWrapper");
-modulo.assets.require("library_ModuloEditor");
-modulo.assets.require("library_EditorPreview");
-modulo.assets.require("library_FileBrowser");
-modulo.assets.require("library_EditorSidebar");
-modulo.assets.require("library_FileEditor");
-modulo.assets.require("library_FileEditorSettings");
-modulo.assets.require("library_LayoutSettings");
-modulo.assets.require("library1_Btn");
-modulo.assets.require("library1_Options");
-modulo.assets.require("library1_Checkbox");
-modulo.assets.require("library2_Page");
-modulo.assets.require("library2_LessonPage");
-modulo.assets.require("library2_LessonNav");
-modulo.assets.require("library2_LandingPage");
-modulo.assets.require("library3_Markdown");
-modulo.assets.require("library3_SlideShow");
-modulo.assets.require("library3_Slide");</script></body></html>
+        <cpart Script>
+                // TODO: Switch to using GetParams
+            let files;
+            let instructions;
+            let title = 'Editor';
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('files')) {
+                files = JSON.parse(urlParams.get('files'));
+            }
+            if (urlParams.has('instructions')) {
+                instructions = urlParams.get('instructions');
+            }
+            if (urlParams.has('title')) {
+                title = urlParams.get('title');
+            }
+            function prepareCallback () {
+                return { files, instructions, title };
+            }
+        </cpart>
+    </Component>
+</script>
+
+<x-SlideWrapper></x-SlideWrapper>
