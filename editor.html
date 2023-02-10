@@ -2,55 +2,34 @@
 
 
 
-<link rel="stylesheet" href="/_modulo/modulo-build-x1j7oiau.css" /></head><body><x-moduloeditor modulo-original-html="">
-        <div class="
-                ModuloEditor
-                layout--center
-                theme--l-mintygoo
+<title>Editor - Slides</title><meta charset="utf8"><link rel="stylesheet" href="/_modulo/modulo-build-xx435p90.css" /></head><body>
+    
+    
+    
+
+
+    <div class="Page-container Page--slides">
+      <slot>
                 
-            ">
-            <x-editorsidebar modulo-original-html=""><div class="upper-left-circle "></div>
-<div class="menu-wrapper ">
-    <div class="menu-button-holder">
-        <x-btn class="actions " @click:="script.toggleSidebar">☰</x-btn>
+                
+            </slot>
     </div>
-    <div class="menu-holder " style="
-            
-                display: none;
-            
-        ">
-        
-            
-            <x-btn class="actions " payload="help" @click:="script.toggleTab">?<span class="btn-superimpose">-&nbsp;&nbsp;-</span></x-btn>
-        
-            
-            <x-btn class="actions " payload="files" @click:="script.toggleTab">📁<span class="btn-superimpose">📂</span></x-btn>
-        
-            
-            <x-btn class="actions " payload="options" @click:="script.toggleTab">🎨<span class="btn-superimpose">🖌️</span></x-btn>
-        
-    </div>
-    <div class="tab-holder ">
-        
-    </div>
-</div>
+    <footer class="Page-footer">
+        © 2023 Michael Bethencourt
+        %
+        <a href="https://modulojs.org/" title="Made with Modulo.js">
+            A Modulo.js Course
+        </a>
+        %
+        <a href="https://kickstartcoding.com/" title="Hosted by Kickstart Coding">
+            In-person sessions by Kickstart Coding
+        </a>
+    </footer>
 
-</x-editorsidebar>
-            <x-fileeditor content="print('hello world')" name="example.py" mode="python" modulo-original-html=""><h3>example.py</h3>
-
-
-
-
-    <div id="main_editor" [script.editspot]="" class=" ace_editor ace_hidpi ace-eclipse" style="font-size: 18px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-haspopup="false" aria-autocomplete="both" role="textbox" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; transform: translate(46px, 18px);"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 42px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; transform: translate(0px, 0px); width: 42px;"><div class="ace_gutter-cell ace_gutter-active-line " style="height: 18px; top: 0px;">1<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 18px; left: 42px; right: 0px; bottom: 0px;"><div class="ace_content" style="transform: translate(0px, 0px); width: 747px; height: 610px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 724px; visibility: visible;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height: 18px; top: 0px; left: 0px; right: 0px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; transform: translate(0px, 0px);"><div class="ace_line" role="option" style="height: 18px; top: 0px;"><span class="ace_keyword">print</span><span class="ace_paren ace_lparen">(</span><span class="ace_string">'hello world'</span><span class="ace_paren ace_rparen">)</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; transform: translate(4px, 0px); width: 9px; height: 18px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; height: 574px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 18px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 42px; right: 0px; width: 747px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 789px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div>
-
-
-</x-fileeditor>
-            
-        </div>
-    </x-moduloeditor>
-
-<script src="/_modulo/modulo-build-xx9go4qg.js"></script><script>window.moduloBuild && modulo.start(window.moduloBuild);
+<script src="/_modulo/modulo-build-xx730mr8.js"></script><script>window.moduloBuild && modulo.start(window.moduloBuild);
 modulo.assets.require("library_configuration");
+modulo.assets.require("library3_configuration");
+modulo.assets.require("SlideWrapper");
 modulo.assets.require("library_ModuloEditor");
 modulo.assets.require("library_EditorPreview");
 modulo.assets.require("library_FileBrowser");
@@ -60,4 +39,11 @@ modulo.assets.require("library_FileEditorSettings");
 modulo.assets.require("library_LayoutSettings");
 modulo.assets.require("library1_Btn");
 modulo.assets.require("library1_Options");
-modulo.assets.require("library1_Checkbox");</script></body></html>
+modulo.assets.require("library1_Checkbox");
+modulo.assets.require("library2_Page");
+modulo.assets.require("library2_LessonPage");
+modulo.assets.require("library2_LessonNav");
+modulo.assets.require("library2_LandingPage");
+modulo.assets.require("library3_Markdown");
+modulo.assets.require("library3_SlideShow");
+modulo.assets.require("library3_Slide");</script></body></html>

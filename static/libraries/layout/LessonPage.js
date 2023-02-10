@@ -86,6 +86,9 @@ function prepareCallback() {
     if (!path) {
         /// try to autodetermine if possible
         path = window.location.pathname;
+        if (path.endsWith('.html')) { // Strip filename, if exists
+            path = path.replace(/\/[^\/]+$/, '/');
+        }
     }
     let foundNavItem = {};
     for (const navItem of navigation) {

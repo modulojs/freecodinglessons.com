@@ -128,7 +128,11 @@
                         --slide-count: {{ state.slides|length }};
                     ">
                 {% for slide in state.slides %}
-                    <div class="slide">{{ slide.html|safe }} </div>
+                    <div class="slide-wrapper">
+                        <div class="slide">
+                            {{ slide.html|safe }}
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -165,73 +169,12 @@
             state.select = newIndex;
         }
     </Script>
-
-    <Style>
-        :host {
-            --activity-shadow-color: #00000033;
-            --activity-shadow-spread: 5px;
-            box-sizing: border-box;
-            padding: 2px;
-            position: relative;
-            font-size: 1.5vw;
-            display: block;
-            width: calc(100vw - 20px);
-            height: calc(100vh - 100px);
-        }
-
-        .toolbar {
-            display: block;
-            display: flex;
-            font-size: 0.3vw;
-        }
-
-        .current-slide-window {
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-        }
-
-        .all-slides {
-            margin-left: calc(-100vw * var(--slide-offset));
-            height: 100%;
-            background: #fff;
-            display: flex;
-            width: calc(100vw * var(--slide-count));
-        }
-
-        .slide {
-            box-shadow: 3px 3px var(--activity-shadow-spread) var(--activity-shadow-color);
-            padding: 20px;
-            margin: 1px;
-            border: 1px solid var(--activity-shadow-color);
-            height: 100vh;
-            overflow-y: auto;
-            width: 100vw;
-            box-sizing: border-box;
-        }
-
-
-        .toolbar button.slide-preview {
-            display: block;
-            overflow: hidden;
-            background: #ffffffaa;
-            max-width: 20%;
-            min-width: 100px;
-            min-height: 100px;
-            max-height: 15vh;
-            border: 2px solid white;
-        }
-
-
-        .toolbar button.slide--selected {
-            background: #fff;
-            border: 2px solid var(--primary);
-            color: #888; /* 50% gray */
-        }
-    </Style>
+    <Style
+        -src="/static/libraries/courseware/SlideShow.css"
+    ></Style>
 </Component>
 
-<Component name="Slide">
+<Component name="Slide"> <!-- NOTE: x-Slide is basically unused, gets replaced above... -->
     <Style>
         :host {
             --activity-shadow-color: #00000033;
