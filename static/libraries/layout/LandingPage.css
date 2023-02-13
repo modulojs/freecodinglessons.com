@@ -1,19 +1,23 @@
 .Page--landing {
+    --navy: #113;
+    --navy50: #11113388;
     background: white;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.Page--landing h3 {
+.Page--landing > h3,
+.Page--landing > * > h3 {
     background: var(--primary);
     width: 50%;
     color: white;
     display: inline;
     padding: 10px;
+    text-align: center;
 }
 
 
@@ -102,3 +106,97 @@
 .Page--landing .course-tile-wrapper > :first-child {
     margin: 0;
 }
+
+
+
+.Page--landing .why-aside {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 3px;
+    color: var(--navy);
+    font-size: 0.85rem;
+}
+
+.wide-splash {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    box-sizing: border-box;
+    width: calc(100vw - 20px);
+    border: 3px solid var(--navy);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr;
+}
+    /*box-shadow: 
+        5px 5px 30px inset var(--navy50),
+        5px 5px 30px var(--navy50);*/
+
+.wide-splash h2 big {
+    font-size: 5rem;
+}
+
+.wide-splash h2 {
+    background: var(--navy);
+    color: white;
+    text-align: right;
+}
+
+.wide-splash h3,
+.wide-splash h2 {
+    padding: 5px;
+}
+
+.wide-splash h3,
+.wide-splash h4 {
+    color: var(--navy);
+}
+
+.wide-splash h3::before {
+    content: open-quote;
+}
+.wide-splash h3::after {
+    content: close-quote;
+}
+
+.wide-splash .questions h3 {
+    padding: 10px;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.why-aside img {
+    max-width: 100%;
+    border: 1px solid var(--bordercolor);
+    margin: 0;
+    box-shadow: 
+               -3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color);
+}
+
+
+.questions {
+    border-right: 1px dotted var(--navy);
+    padding: 5px;
+}
+
+.why-aside > div {
+    border-top: 1px solid var(--navy);
+}
+
+.why-aside > div > a {
+    text-align: center;
+    background: var(--bordercolor);
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 992px) {
+    .Page--landing .wide-splash {
+        display: block;
+    }
+}
+

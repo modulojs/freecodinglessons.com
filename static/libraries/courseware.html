@@ -1,4 +1,6 @@
-<script Configuration -src="https://unpkg.com/snarkdown">
+<!--<script Configuration -src="https://unpkg.com/snarkdown">-->
+<!--<script Configuration -src="https://unpkg.com/marked@/src/">-->
+<script Configuration -src="https://unpkg.com/showdown/dist/showdown.min.js">
     let defaultOptions = { allowNamespace: 'x' };
     function _replaceSigiledElements(html, sigil, elemPrefix) {
         const lines = (html + '\n\n').split('\n'); // add space at end
@@ -48,7 +50,8 @@
     function moduloMarkdown(source, options = defaultOptions) {
         // Unescape
         source = source.replace(/&gt;/gi, '>').replace(/&lt;/gi, '<');
-        let html = snarkdown(source);
+        //let html = snarkdown(source);
+        let html = (new showdown.Converter()).makeHtml(source);
         if (options.allowNamespace) {
             html = _replaceSigiledElements(html, '%', options.allowNamespace + '-');
         }
@@ -63,7 +66,8 @@
         return html;
     }
 
-    modulo.register('util', snarkdown);
+    //modulo.register('util', snarkdown);
+    //modulo.register('util', showdown);
     modulo.register('util', moduloMarkdown);
 </script>
 
@@ -192,3 +196,44 @@
         }
     </Style>
 </Component>
+
+<Component name="LessonPage" mode="vanish-into-document">
+    <Props
+        path
+    ></Props>
+
+    <Template
+        -src="/static/libraries/layout/LessonPage.html"
+    ></Template>
+
+    <StaticData
+        -src="/__dirlist/foundations.json"
+    ></StaticData>
+
+    <Script
+        -src="/static/libraries/layout/LessonPage.js"
+    ></Script>
+
+    <Style
+        -src="/static/libraries/layout/LessonPage.css"
+    ></Style>
+</Component>
+
+
+<Component name="LessonNav">
+    <Props
+        navselected
+        subnav
+    ></Props>
+    <Template
+        -src="/static/libraries/layout/LessonNav.html"
+    ></Template>
+    <Script
+        -src="/static/libraries/layout/LessonNav.js"
+    ></Script>
+    <Style
+        -src="/static/libraries/layout/LessonNav.css"
+    ></Style>
+</Component>
+
+

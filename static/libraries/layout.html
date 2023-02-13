@@ -16,46 +16,6 @@
 </Component>
 
 
-<Component name="LessonPage" mode="vanish-into-document">
-    <Props
-        path
-    ></Props>
-
-    <Template
-        -src="/static/libraries/layout/LessonPage.html"
-    ></Template>
-
-    <StaticData
-        -src="/__dirlist/foundations.json"
-    ></StaticData>
-
-    <Script
-        -src="/static/libraries/layout/LessonPage.js"
-    ></Script>
-
-    <Style
-        -src="/static/libraries/layout/LessonPage.css"
-    ></Style>
-</Component>
-
-
-<Component name="LessonNav">
-    <Props
-        navselected
-        subnav
-    ></Props>
-    <Template
-        -src="/static/libraries/layout/LessonNav.html"
-    ></Template>
-    <Script
-        -src="/static/libraries/layout/LessonNav.js"
-    ></Script>
-    <Style
-        -src="/static/libraries/layout/LessonNav.css"
-    ></Style>
-</Component>
-
-
 <Component name="LandingPage" mode="vanish-into-document">
     <Props
         title
@@ -70,5 +30,44 @@
     <Script
         -src="/static/libraries/layout/Page.js"
     ></Script>
+</Component>
+
+
+<!-- NOTE: DEAD CODE -->
+<Component name="TabCarousel">
+    <Template>
+    </Template>
+    <State
+        tabs:=[]
+    ></State>
+    <Script lifecycle="initialized">
+        // TODO: Make more generalized, and then reuse scirpt between Tabs and Slides
+        function prepareCallback() {
+            const tabs = state.tabs;
+            if (!tabs.length) {
+                let index = 0;
+                for (const child of element.originalChildren) {
+                    const title = child.getAttribute('title');
+                    if (title) {
+                        tabs.push({ index, html: child.innerHTML, title });
+                        index++;
+                    }
+                }
+            }
+            let offset = 0;
+            for (const tab of tabs) {
+                tab.isSelected = tab.index === state.select;
+                if (tab.isSelected) {
+                    offset = tab.index;
+                }
+            }
+            state.tabs = tabs;
+            state.offset = offset;
+        }
+
+        function setSlide(newIndex) {
+            state.select = newIndex;
+        }
+    </Script>
 </Component>
 
