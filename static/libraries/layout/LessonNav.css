@@ -117,3 +117,17 @@ h1 .of {
     color: white;
 }
 
+
+.navbtn {
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid var(--bordercolor);
+    display: inline-block;
+    padding: 2px;
+    margin: 1px;
+    background: var(--bordercolor);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+

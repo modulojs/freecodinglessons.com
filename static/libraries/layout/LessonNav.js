@@ -2,7 +2,7 @@
 const currentYear = (new Date()).getFullYear();
 
 // TODO: Possibly auto generate?
-const navigation = [
+const firstNav = [
     {
         title: "by FreeCodingLessons.com",
         style: "link",
@@ -11,10 +11,6 @@ const navigation = [
     {
         title: "Welcome",
         file: "foundations/",
-    },
-    {
-        title: "Overview",
-        file: "foundations/overview.html",
     },
     {
         title: "Part 1",
@@ -47,8 +43,11 @@ const navigation = [
 ];
 
 
-// TODO: Maybe later have this get "switched on" when you sign in or something?
 const extraNav = [
+    {
+        title: "Overview",
+        file: "foundations/overview.html",
+    },
     {
         title: "Part 2",
         divider: true,
@@ -108,8 +107,8 @@ const extraNav = [
     },
 ];
 
-function getNav() {
-    return navigation;
+function getNav(showExtra = false) {
+    return firstNav.concat(showExtra ? extraNav : []);
 }
 
 modulo.register('util', getNav);
@@ -138,10 +137,14 @@ function prepareCallback() {
         }
     }
     return {
+        navigation: getNav(state.showExtra),
         currentYear,
-        navigation,
         hash,
     };
+}
+
+function toggleVisible() {
+    state.showExtra = !state.showExtra;
 }
 
 // Hacky scrollspy + debounce

@@ -57,6 +57,9 @@
                 {% endif %}
             </li>
         {% endfor %}
+	<li>
+            <button class="navbtn" @click:=script.toggleVisible>{% if state.showExtra %}&uarr;{% else %}&darr;{% endif %} Early Access</button>
+	</li>
     </ul>
 </nav>
 
