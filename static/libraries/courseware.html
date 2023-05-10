@@ -47,6 +47,22 @@
         return html + `\n</${ wrappingTag }>`; // Close wrapping tag
     }
 
+    // Default
+    let editorURL = 'https://freecodinglessons.com/editor.html?file=';
+    function setupEditorURL() {
+        const urlParams = new URLSearchParams(location.search);
+        const myPath = urlParams.get('path') || '';
+        if (window.location.host.startsWith('localhost')) {
+            editorURL = 'http://localhost:3334/editor.html?file=';
+        } else if (window.location.host.startsWith('127')) {
+            editorURL = 'http://localhost:3334/editor.html?file=';
+        }
+        if (myPath.includes('/') && (myPath.lastIndexOf('/') !== (myPath.length - 1))) {
+            editorURL += myPath.substr(0, myPath.lastIndexOf('/')); // Get base path
+        }
+    }
+    setupEditorURL();
+
     function moduloMarkdown(source, options = defaultOptions) {
         // Unescape
         source = source.replace(/&gt;/gi, '>').replace(/&lt;/gi, '<');
@@ -63,6 +79,9 @@
             }
             html = _splitAndWrap(/<hr *\/?>/ig, slideshow, slide, html);
         }
+        if (options.editorlinks) {
+            html = html.replace(/<a href="./gi, '<a target="_blank" href="' + editorURL);
+        }
         return html;
     }
 
@@ -77,6 +96,7 @@
     <Props
         slideshow
         firstslide
+        editorlinks
         src
     ></Props>
     <State
@@ -104,6 +124,9 @@
             const opts = {};
             if (props.slideshow) {
                 opts.slideshow = true;
+            }
+            if (props.editorlinks) {
+                opts.editorlinks = true;
             }
             let results = moduloMarkdown(state.source, opts);
             if (props.firstslide) { // extract first slide content

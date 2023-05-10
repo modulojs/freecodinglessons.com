@@ -20,7 +20,7 @@ Let's get practice changing the background color of the entire page.
 
 * Objective: Modify CSS color of background of body tag.
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. Note the new "body" selector, and the new
 "background" property, used together to set the background of the page.
 3. Observe how in the browser the site is hard to read with a bright orange
@@ -46,7 +46,7 @@ background to give it an inverted or "cut-out" look.
 
 * Objective: Modify the CSS to fill in a `limegreen` background on H1-tags.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. The HTML has grown with new H1 and H2 tags.
 3. Observe how in the browser the H1-tag is black, and thus blending in or
 invisible with the black background.
@@ -75,7 +75,7 @@ background.
 
 * Objective: Fill in CSS to modify both background and color of H2-tags.
 
-1. Open `challenge3.html` in your text editor and browser.
+1. Open [challenge3.html](./challenge3.html) in your text editor and browser.
 2. Examine the existing code. The HTML has changed slightly since last time,
 now including some extra slash symbols (`///`) for a fun "hacker-ish" stylistic
 effect.
@@ -116,7 +116,7 @@ Let's apply all we've learned to make H6 have a limegreen background just like H
 
 * Objective: Create a new rule for all H6-tags to have limegreen background.
 
-1. Open `challenge4.html` in your text editor and browser.
+1. Open [challenge4.html](./challenge4.html) in your text editor and browser.
 2. Examine the existing code. Now there's extra H6 tags with extra symbols for
 stylistic effect.
 3. Observe how in the browser the H6 tag still has the default text color.

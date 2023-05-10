@@ -25,7 +25,7 @@ World". Let's start there!
 
 * Objective: Write an HTML page that says "Hello Coding World"
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. It says simply "Hello World".
 3. Observe how in the browser it also says "Hello World".
 4. The goal for Challenge 1 is to change the "code", and then refresh, to make
@@ -50,7 +50,7 @@ That Hello World text in the browser is too small. Let's turn it into a Header.
 
 * Objective: Write the code for the H1 tag.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. It says "Hello Coding World", similar to before.
 3. Type `<h1>` before the code.
     - `<` (less than, or often pronounced "opening pointy bracket")
@@ -80,7 +80,7 @@ normal sized again.
 
 * Objective: Learn to write the code for closing H1 tags
 
-1. Open `challenge3.html` in your text editor and browser.
+1. Open [challenge3.html](./challenge3.html) in your text editor and browser.
 2. Examine the existing code. This time, the text is too big: We only want
 "Hello Coding World" to be the title
 3. Type `</h1>` after the first line (the one that says "Hello Coding World").

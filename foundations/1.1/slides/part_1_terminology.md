@@ -1,12 +1,3 @@
-1.1 - Part 1 - Terminology
---------------------------------
-
-Before we can learn to code, we need to learn core terminology:
-
-
----------------------------
-
-
 
 ### General computer terminology
 

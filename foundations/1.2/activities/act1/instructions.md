@@ -41,7 +41,7 @@ Yumedono photo (second from top) are incomplete.
 * Objective: Modify HTML to complete the second photo's credits by adding the
   text "Frank J. Gualtieri Jr".
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. It has 4 partially complete entries about
 featured photographs. Note that the second photo (Yumedono)
 has an `<a>` tag similar to the one in the first photo, however, it is missing
@@ -76,7 +76,7 @@ Now, it's the opposite: The text is filled in, but the URL is not.
 * Objective: Modify the HTML to fill in a new attribute with a URL completing
   the A-tag.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. The HTML has grown slightly, this time with
 another incomplete A-tag in the next photo.
 3. Observe how in the browser the A tag is visible, but it doesn't look or

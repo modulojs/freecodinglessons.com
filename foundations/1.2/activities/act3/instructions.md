@@ -30,7 +30,7 @@ Let's start by fixing image widths.
 
 * Objective: Modify CSS to force all images to be 100 pixels wide.
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. This is the beginnings of a store page for a
 sewing school. Note how H1-tags have a width fixed at 260 pixels.
 3. Observe how in the browser the H1 tag is only 260 pixels wide. Also, note
@@ -60,7 +60,7 @@ adjust the width on the body to change the entire page at once.
 
 * Objective: Modify the CSS to constrain the body to only be only 500 pixels wide.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. The page has grown slightly, adding more content
 and a styled H2 tag.
 3. Observe how in the browser the H1 tag is limited in width, as are the
@@ -89,7 +89,7 @@ Our design would look better centered instead of "stuck" on the left side.
 
 * Objective: Modify the CSS to center the body.
 
-1. Open `challenge3.html` in your text editor and browser.
+1. Open [challenge3.html](./challenge3.html) in your text editor and browser.
 2. Examine the existing code. Both the CSS and HTML has grown slightly, with a
 few new H3 tags.
 3. Observe how in the browser everything is "stuck" on the left side.
@@ -133,7 +133,7 @@ centering the text (along with other inline elements, e.g. images).
 
 * Objective: Modify the CSS to center align the entire page.
 
-1. Open `challenge4.html` in your text editor and browser.
+1. Open [challenge4.html](./challenge4.html) in your text editor and browser.
 2. Examine the existing code. Note that the CSS and HTML have both grown.
 3. Observe how in the browser the images are still off-center, stuck toward the
 left, and the H2 and H3 tags have left-aligned text, that looks odd near so

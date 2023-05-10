@@ -31,7 +31,7 @@ in an element, we add padding.
 
 * Objective: Modify CSS to add 30 pixels of padding to H2 tags.
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. This is the beginnings of a page on computer game
 history. Note how P-tags have padding specified to be 20px
 3. Observe how in the browser that causes the P-tag to have "20 pixels" worth
@@ -64,7 +64,7 @@ Let's make our H1 big! Get practice with using `font-size` to set it to have
 * Objective: Modify the CSS to add a property to H1 tags to set their font to
   be 100 pixels tall.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. The CSS has grown slightly, adding in a
 `font-size` property for P-tags and H2-tags, but nothing for the H1-tag.
 3. Observe how in the browser the H1 tag is barely larger than the P-tag and
@@ -95,7 +95,7 @@ Let's add some margins.
 
 * Objective: Modify the CSS to add a 100px margin to H3 tags.
 
-1. Open `challenge3.html` in your text editor and browser.
+1. Open [challenge3.html](./challenge3.html) in your text editor and browser.
 2. Examine the existing code. Both the CSS and HTML has grown: Now there are
 image, h3 and a tags in the mix as well.
 3. Observe how in the browser the H3 tag (i.e. 1971 - The Oregon Trail), has
@@ -130,7 +130,7 @@ that, we have `margin-top`, `margin-left`, `margin-right`, and `margin-bottom`.
 
 * Objective: Modify the CSS to set a 10 pixel margin for H3 tags beneath them.
 
-1. Open `challenge4.html` in your text editor and browser.
+1. Open [challenge4.html](./challenge4.html) in your text editor and browser.
 2. Examine the existing code. Note that there is more CSS since last time. See
 how in lines 5 and 6 we add a `margin-left` and `margin-right` to the body tag.
 We'll want to add a `margin-bottom` to the `h3` tag.

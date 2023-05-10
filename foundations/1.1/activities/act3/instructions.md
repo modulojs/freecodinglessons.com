@@ -30,7 +30,7 @@ Let's get with modifying a style tag to change the color of H1 tags.
 
 * Objective: Modify CSS to turn the H1 tag green.
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. It has a style tag that contains a single rule to
 style H1 tags with the color "orange".
 3. Observe how in the browser the H1 tag has orange text.
@@ -54,7 +54,7 @@ Let's style H2-tags to be "teal", getting practice writing the full property.
 
 * Objective: Modify the CSS to fill in a new property causing H2-tags to be teal.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. The HTML has grown slightly, and it has a style
 tag that contains a two rules: One from before, and a new empty rule for
 H2-tags.
@@ -93,7 +93,7 @@ rule.
 * Objective: Modify the CSS to create a new rule causing H3-tags to be
   chartreuse.
 
-1. Open `challenge3.html` in your text editor and browser.
+1. Open [challenge3.html](./challenge3.html) in your text editor and browser.
 2. Examine the existing code. The HTML has grown even more, and it has a style
 tag that contains the two rules from before, and an empty space for the new
 rule.
@@ -132,7 +132,7 @@ Let's apply all we've learned to make paragraphs "forestgreen" colored.
 
 * Objective: Modify the CSS to create a new rule causing all P-tags to be forestgreen.
 
-1. Open `challenge4.html` in your text editor and browser.
+1. Open [challenge4.html](./challenge4.html) in your text editor and browser.
 2. Examine the existing code.
 3. Observe how in the browser the P tag still has the default text color.
 4. Your goal for Challenge 4 is to apply what you've learned in the previous

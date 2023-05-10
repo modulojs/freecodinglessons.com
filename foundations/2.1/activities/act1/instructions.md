@@ -22,7 +22,7 @@ try challenging yourself with seeing how quickly you can "race" through this!
 * Objective: Get more practice with the different ways we learned to do tags in
   `1.1 - 1.3`.
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 
 2. Examine the existing code. It uses paragraph tags (p-tags) to show the top 5
 ranked Women's Tennis Association players in separate paragraphs.

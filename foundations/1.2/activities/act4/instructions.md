@@ -25,7 +25,7 @@ logo, for a "neon glow" effect.
 * Objective: Modify CSS to add a violet box-shadow around H1 tags, with a blend
   distance of 30 pixels.
 
-1. Open `challenge1.html` in your text editor and browser.
+1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. This is the beginnings of a menu for a retro, 80s
 nightclub themed restaurant. Note how the IMG tag has a steelblue box-shadow.
 3. Observe how in the browser the IMG tag has that light blue "neon" glow.
@@ -58,7 +58,7 @@ on the slogan "Fine Food and Cocktails".
 * Objective: Modify the CSS to change the background from white to be a
   vertical linear-gradient of magenta to violet.
 
-1. Open `challenge2.html` in your text editor and browser.
+1. Open [challenge2.html](./challenge2.html) in your text editor and browser.
 2. Examine the existing code. Now H2 also has a violet box-shadow, although it
 still has `background: white`.
 3. Observe how in the browser the H2 tag has that bright white background.
@@ -87,7 +87,7 @@ make the menu headers have a silvery streak that fades into the background.
 * Objective: Modify the CSS to for H3 tags background to fade left-to-right
   from the color "steelblue" to the background color ("black")
 
-1. Open `challenge3.html` in your text editor and browser.
+1. Open [challenge3.html](./challenge3.html) in your text editor and browser.
 2. Examine the existing code. Both the CSS and HTML have, with H3 and P tags.
 3. Observe how in the browser the H3 tags aren't even visible, since they are
 black text on black background.
@@ -122,7 +122,7 @@ drop-shadow silhouette.
 * Objective: Modify the CSS to add a darkviolet dropshadow, offset to the
   bottom-right by 5 pixels, with no blur or spread.
 
-1. Open `challenge4.html` in your text editor and browser.
+1. Open [challenge4.html](./challenge4.html) in your text editor and browser.
 2. Examine the existing code. We'll be adding to the P-tag CSS.
 3. Observe how in the browser the P-tags have no outline or shadow.
 4. Add `box-shadow: 5px 5px 0 darkviolet;` to P-tag CSS, for a drop shadow that
