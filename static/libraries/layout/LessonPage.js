@@ -91,7 +91,7 @@ function prepareCallback() {
         }
     }
     let foundNavItem = {};
-    for (const navItem of navigation) {
+    for (const navItem of getNav(true)) {
         if (navItem.file && navItem.file === path) {
             foundNavItem = navItem;
             break;
