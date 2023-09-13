@@ -182,15 +182,18 @@ variety of new things you can build with your new skills:
 
 Note: These are most likely to change. Also, may be ordered as 1.2 instead.
 
+- Each design lab activity produces an image (that's in the preview)
+
 ## 1.4 - Design Lab 1
+
 
 - Activity 1 - PenPot Basics
     - How to sign-up and/or download PenPot (or Figma)
     - How to draw some simple shapes
     - Don't worry about drawing designs, for Design Lab 1 it's just doodling
-    - Students produce a simple little doodle (e.g. a landscape, with a blue
-      square for sky and a green square for the horizon, a yellow circle for
-      the sun, some green circles for hills or something, a free-form drawn
+    - Image: Students produce a simple little doodle (e.g. a landscape, with a
+      blue square for sky and a green square for the horizon, a yellow circle
+      for the sun, some green circles for hills or something, a free-form drawn
       river, something like that.)
 - Activity 2 - PenPot Colors, Palettes, and Color Theory
     - How to select different colors in PenPot
@@ -200,16 +203,14 @@ Note: These are most likely to change. Also, may be ordered as 1.2 instead.
     - Show how these generate hex codes
     - *Starting the style guide:* As an on-going activity, students will be
       "building up" a style guide.
-    - Students assemble a few color palettes, one that should be light on dark,
-      and another that's and dark on light (this consists of a drawing that's
-      basically squares with named colors, e.g.  Canary Yellow)
+    - Image: Students assemble a few color palettes, one that should be light
+      on dark, and another that's and dark on light (this consists of a drawing
+      that's basically squares with named colors, e.g.  Canary Yellow)
 - Activity 3 - PenPot export, file format exploration
     - How to export as PNG or SVG
     - How to export as HTML / CSS
     - Talk about difference between popular image file formats (PNG, JPG, SVG),
       and how to turn on extensions on different file systems
-    - Students practice saving their style guide as each format, and examining
-      how it looks in different image viewers.
     - PNG: Show how PNG can have transparency and is lossless, no artifacts,
       but is often bigger. It's a good choice for anything except large photos.
     - JPG: Show how JPG can't have transparency, and also is "lossy" and thus
@@ -220,15 +221,19 @@ Note: These are most likely to change. Also, may be ordered as 1.2 instead.
       "remembers" the shapes and drawing (unlike "raster" formats JPG/PNG), and
       is actually rendered on the device, meaning more complicated SVGs risk
       being inconsistent accross devices, or in even slow to display.
+    - Image: Students work further on their "style guide", exporting in each
+      format to see how it looks in different image viewers.
 - Activity 4 - Single-file Netlify Launch
     - How to sign-up for Netlify and upload single files
     - Practice uploading images (e.g. their style guide)
     - Practice uploading HTML files (e.g. the ones they made in 1.1)
+    - Image: Upload style guide, including SVG and PNG formats
 
 
 ## 2.4 - Design Lab 2
 
 - Activity 1 - PenPot Layouts
+    - Teach the concept of PenPot for web design
     - Teach the concept of "Mock Up"
     - Teach the concept of "Wireframe"
     - Student produces a wireframe / mockup of a single-column design
@@ -245,30 +250,34 @@ Note: These are most likely to change. Also, may be ordered as 1.2 instead.
       Kraken, or something else that's cross platform and graphical?
 
 
-## 2.4 - Design Lab 3
+## 3.4 - Design Lab 3
 
 - Activity 1 - PenPot Palette and Typography
     - Show how you can use Google Fonts
     - Demonstrate sharing a palette
     - Practice wireframe -> mockup
+    - Activity: Add to Style Guide typographic
 - Activity 2 - PenPot Linking
     - Show how to add interactivity to mockups
     - Show how to share a preview mode
     - Practice wireframe -> mockup
+    - Activity: Draw 
 - Activity 3 - Design Languages and Human Interface Guidelines
     - Look at design languages
     - Learn concept of design elements
     - Examine Microsoft's Metro, Apple HIG, GNOME HIG, Google's Material design, etc.
     - Practice identifying design elements
     - Practice spotting HIG violations in interfaces
+    - Activity: Draw something in each design language
 - Activity 4 - Design Trends
     - History: Survey of trends in 90s, 00s, 10s, and now 20s
     - Mention: early web, skeumorphism, metro and "flat" design, material
       design, new-skeumorphism, glassmorphism, "corporate memphis", "web neau
       brutalism"
+    - Actiaty:v
 
 
-## 2.4 - Design Lab 4
+## 4.4 - Design Lab 4
 
 - Activity 1 - PenPot Components
     - Show how to make components in PenPot

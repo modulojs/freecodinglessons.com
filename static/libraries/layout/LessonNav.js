@@ -36,32 +36,16 @@ const firstNav = [
         title: "Multipage Sites",
         module: "2.1",
     },
+    //]; const extraNav = [
     {
         title: "Flex Layout",
         module: "2.2",
-        completion: 50,
+        completion: 70,
     },
     {
         title: "Lab: Multi-Page Projects",
         module: "2.3",
         completion: 50,
-    },
-    {
-        title: "Part 3.1 and onward",
-        divider: true,
-    },
-    {
-        title: "IN DEVELOPMENT: Access previews of Parts 3, and 4 on GitHub",
-        style: "link",
-        file: "https://github.com/modulojs/foundations/",
-    },
-];
-
-
-const extraNav = [
-    {
-        title: "Overview",
-        file: "foundations/overview.html",
     },
     {
         title: "Part 3",
@@ -70,14 +54,17 @@ const extraNav = [
     {
         title: "Tailwind",
         module: "3.1",
+        completion: 80,
     },
     {
         title: "Forms",
         module: "3.2",
+        completion: 50,
     },
     {
         title: "Lab: Forms and Frameworks",
         module: "3.3",
+        completion: 30,
     },
     {
         title: "Part 4",
@@ -86,14 +73,40 @@ const extraNav = [
     {
         title: "Web Components",
         module: "4.1",
+        completion: 30,
     },
     {
         title: "Modulo Layouts",
         module: "4.2",
+        completion: 30,
     },
     {
         title: "Lab: JAMStack Apps with Modulo",
         module: "4.3",
+        completion: 30,
+    },
+];
+
+const extraNav = [
+    {
+        title: "Overview",
+        file: "foundations/overview.html",
+    },
+    {
+        title: "Deisgn Lab 1.4",
+        file: "index.html#Unavailable",
+    },
+    {
+        title: "Deisgn Lab 2.4",
+        file: "index.html#Unavailable",
+    },
+    {
+        title: "Deisgn Lab 3.4",
+        file: "index.html#Unavailable",
+    },
+    {
+        title: "Deisgn Lab 4.4",
+        file: "index.html#Unavailable",
     },
 ];
 
