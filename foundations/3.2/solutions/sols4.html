@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    body {
+        padding: 30px;
+    }
+</style>
+
+<a href="https://app.netlify.com/drop">Deploy me at Netlify Drop!</a>
+
+<h1 class="font-medium text-4xl text-emerald-500 mx-12 dark:text-stone-400">Sign Up Now</h1>
+<form class="w-full max-w-lg m-12" netlify-form>
+
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-stone-700 text-xs font-bold mb-2" for="grid-first-name">
+        First
+      </label>
+      <input class="appearance-none block w-full bg-stone-200 text-stone-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-emerald-50" id="grid-first-name" type="text" >
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-stone-700 text-xs font-bold mb-2" for="grid-last-name">
+        Last
+      </label>
+      <input class="appearance-none block w-full bg-stone-200 text-stone-700 border border-stone-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-emerald-50 focus:border-stone-500" id="grid-last-name" type="text" >
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-2">
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-stone-700 text-xs font-bold mb-2" for="grid-city">
+        City
+      </label>
+      <input class="appearance-none block w-full bg-stone-200 text-stone-700 border border-stone-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-emerald-50 focus:border-stone-500" id="grid-city" type="text" >
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-stone-700 text-xs font-bold mb-2" for="grid-state">
+        State
+      </label>
+      <div class="relative">
+        <select class="block appearance-none w-full bg-stone-200 border border-stone-200 text-stone-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-emerald-50 focus:border-stone-500" id="grid-state">
+          <option>Baja California</option>
+          <option>Jalisco</option>
+          <option>Chiapas</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-stone-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-stone-700 text-xs font-bold mb-2" for="grid-zip">
+        Zip
+      </label>
+      <input class="appearance-none block w-full bg-stone-200 text-stone-700 border border-stone-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-emerald-50 focus:border-stone-500" id="grid-zip" type="text" >
+    </div>
+  </div>
+
+  <button class="bg-emerald-500 hover:bg-emerald-700 text-emerald-50 font-bold py-2 px-4 rounded">
+      Submit Form
+  </button>
+
+</form>

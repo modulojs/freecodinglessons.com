@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<script Modulo src="https://unpkg.com/mdu.js@0.0.64/src/Modulo.js" -src="https://unpkg.com/create-modulo@0.0.36/lib/index.html">
+    <Component name="Chart">
+        <Template>
+            {% for number in month_numbers %}
+                <section style="--month-number: {{ number }};">
+                    <h2 title="Month #{{ number }}">{{ number }}</h2>
+                    {% for event in staticdata %}
+                        {% if event.month is number %}
+                            <article>{{ event.title }}</article>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            {% endfor %}
+        </Template>
+
+        <StaticData -name="month_numbers">
+            [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+        </StaticData>
+
+        <script StaticData -src="https://www.gov.uk/bank-holidays.json" -data-type="js">
+            ['england-and-wales']
+            ['events']
+            .map(function (originalEvent) {
+                // Get item 1 when split by dashes, convert to number (gets month)
+                return {
+                    month: Number(originalEvent.date.split('-')[1]),
+                    title: originalEvent.title,
+                };
+            })
+        /script>
+
+        <Style>
+            :host {
+                height: 200px;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+            }
+            h2 {
+                font-size: 0.9rem;
+            }
+            section {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            section:hover {
+                background: #aaa;
+            }
+            article {
+                font-size: 0.8rem;
+                grid-column: var(--month-number) / span 1;
+                background: orange;
+                color: white;
+                font-weight: bold;
+                box-sizing: border-box;
+                height: 10px;
+                width: 15px;
+                overflow: hidden;
+            }
+            article:hover {
+                height: 50px;
+                width: 85px;
+                margin-bottom: -40px;
+                margin-right: -70px;
+                z-index: 1;
+            }
+        </Style>
+
+    </Component>
+</script>
+
+<x-Page pagetitle="Dashboard" navselected="/index.html">
+
+    <h1>Dashboard</h1>
+
+    <x-Chart></x-Chart>
+
+</x-Page>
+
