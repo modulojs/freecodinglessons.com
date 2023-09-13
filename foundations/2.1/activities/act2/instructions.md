@@ -1,28 +1,44 @@
-# 2.1 - Activity 2 - Anchor tags
+# 2.1 - Activity 2 - Multi-Page Sites
 
-Key Terms:
+Time to start dealing with multiple files.
 
-- **index.html** - The "default" file or "homepage" for a website. You
-  typically name the first HTML file you compose "index.html" for any website
-  project, since that is the one that will be sent to visitors by default.
+This is the first activity that cannot be completed entirely using the online
+file editor.  Most future activities will be the same. Because dealing with
+multiple files adds extra complications, you will need use your local file
+browser on your computer.
 
-- **relative path** - When you reference a local file (e.g. "about.html" or
-  "images/myimage.jpg" or something) - both links and images can do this.
+> ----
+> **Lesson 2.1 - These activities MUST be completed locally.** Learn how to
+> install a free and open source in the [instructions at the start of this
+> course](../../).
+
+
+
+-----------------
+
+
+# Key Terms
 
 - **multi-page** - A website that has multiple HTML files, typically linked
   together using anchor tags (commonly called links)
 
+- **index.html** - The "default" file or "homepage" for a website. You name the
+  first HTML file you compose "index.html", since that is the one that will be
+  sent to visitors by default.
 
-Key Term Review:
-
-- **attribute** - Extra information that goes inside the opening tag, always in
-  the format of something="anotherthing". Example: `<img src="myphoto.jpg" />`
+- **relative path** - When you reference a local file (e.g. "about.html" or
+  "myimage.jpg" or something) - both links and images can do this.
 
 - **single-page** - A website that consists of only a single HTML file
 
 - **broken link** - A link that has a typo, or is pointing to a now deleted
   file, thus causing the browser to display an error when you click on it
 
+
+> ----
+> **HTML attribute review:** Attributes are extra information that goes inside
+> the opening tag, always in the format of `something="anotherthing"`.
+> Examples:  `<img src="./myphoto.jpg">`, or  `<a href="./someplace.html">`
 
 
 ----------------------------------
@@ -50,6 +66,10 @@ tag to make images display in the browser
 
 - Hint 1: `src="charlesbabbage.jpg"`
 - Hint 2: `src="alanturing.png"`
+
+
+
+----------------------------------
 
 
 Challenge 2: Multi-page sites
@@ -86,6 +106,10 @@ in links back to the index.html file
 
 
 
+----------------------------------
+
+
+
 Challenge 3: Building a "navigation bar"
 ----------------------------------
 
@@ -113,6 +137,10 @@ each all 4 HTML pages, so you can navigate around directly (consider using
 - Hint 2: Copy the P-tag that has all 3 links from the either the index.html or
   the babbage.html file, and paste it into the lovelace.html file. Do the same
   for the turing.html file (and be sure to remove existing back links).
+
+
+
+----------------------------------
 
 
 

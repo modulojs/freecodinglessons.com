@@ -31,7 +31,6 @@
                             {% if page.module in props.navselected %}Page-navLink--selected{% endif %}
                         ">
                         <span class="Page-navLinkModule">{{ page.module }}</span>
-                        {% comment %}
                         {% if page.completion is 0 %}&#x25CB;{% endif %}
                         {% if page.completion %}
                             {% if page.completion gt 90 %}&#x25CF;
@@ -39,7 +38,6 @@
                             {% elif page.completion gt 40 %}&#x25D1;
                             {% elif page.completion gt 20 %}&#x25D4;{% endif %}
                         {% endif %}
-                        {% endcomment %}
                         {{ page.title }}
                     </a>
                     {% if page.module in props.navselected %}

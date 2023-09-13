@@ -1,4 +1,3 @@
-<!--<script Configuration -src="https://unpkg.com/snarkdown">-->
 <!--<script Configuration -src="https://unpkg.com/marked@/src/">-->
 <script Configuration -src="https://unpkg.com/showdown/dist/showdown.min.js">
     let defaultOptions = { allowNamespace: 'x' };
@@ -49,6 +48,8 @@
 
     // Default
     let editorURL = 'https://freecodinglessons.com/editor.html?file=';
+    let basePath = '';
+    let dirName = '';
     function setupEditorURL() {
         const urlParams = new URLSearchParams(location.search);
         const myPath = urlParams.get('path') || '';
@@ -58,7 +59,11 @@
             editorURL = 'http://localhost:3334/editor.html?file=';
         }
         if (myPath.includes('/') && (myPath.lastIndexOf('/') !== (myPath.length - 1))) {
-            editorURL += myPath.substr(0, myPath.lastIndexOf('/')); // Get base path
+            basePath = myPath.substr(0, myPath.lastIndexOf('/')); // Get base path
+            editorURL += basePath;
+            const dirs = basePath.split('/');
+            dirs.pop();
+            dirName = dirs.join('/');
         }
     }
     setupEditorURL();
@@ -66,7 +71,6 @@
     function moduloMarkdown(source, options = defaultOptions) {
         // Unescape
         source = source.replace(/&gt;/gi, '>').replace(/&lt;/gi, '<');
-        //let html = snarkdown(source);
         let html = (new showdown.Converter()).makeHtml(source);
         if (options.allowNamespace) {
             html = _replaceSigiledElements(html, '%', options.allowNamespace + '-');
@@ -80,12 +84,12 @@
             html = _splitAndWrap(/<hr *\/?>/ig, slideshow, slide, html);
         }
         if (options.editorlinks) {
-            html = html.replace(/<a href="./gi, '<a target="_blank" href="' + editorURL);
+            html = html.replace(/<a href="\.\./gi, '<a target="_blank" href="' + dirName);
+            html = html.replace(/<a href="\./gi, '<a target="_blank" href="' + editorURL);
         }
         return html;
     }
 
-    //modulo.register('util', snarkdown);
     //modulo.register('util', showdown);
     modulo.register('util', moduloMarkdown);
 </script>

@@ -1,5 +1,8 @@
 # 2.1 - Activity 1 - Nested HTML Tags: Lists and Tables
 
+Welcome to the first activity of the second section of modules!
+
+
 Key Terms:
 
 - **nested tags** - When one tag is placed within another, i.e. after it's
@@ -9,6 +12,32 @@ Key Terms:
   show that one tag is "in" another. This is considered best practice for
   professional code because it makes code easier to read and helps prevent
   mistakes.
+
+
+----------------------------------
+
+## Learning tips
+
+While it might seem convoluted at first, it's very common to nest tags many
+layers deep. HTML documents that power big, real websites may have dozens of
+nested tags.
+
+You'll notice this activity quickly "ramps up" in terms of number of tags
+and amount of content you'll be handling. It's good to get practice moving
+around a lot of text, but it can also be challenging, so it's important to keep
+these tips in mind:
+
+
+1. Don't try to type every tag, otherwise you'll go too slowly and
+make too many mistakes. Instead, use lots of copy and paste, changing text or
+other attributes each time.
+2. Learn shortcuts for your operating system and/or editor. For example:
+    - *OS and Browser Shortcuts:* Alt+Tab or Command+Tab (switch windows),
+      Ctrl+Shift+R (force refresh browser)
+    - *Editor shortcuts:*  "Tab" and "Shift+Tab" to indent and unindent (many
+      lines, if done after selecting text), Ctrl+S or Command+S to save
+      (desktop only)
+
 
 ----------------------------------
 
@@ -139,17 +168,106 @@ to indent it (or use the Tab key)
 ----------------------------------
 
 
+The Trouble with Tables
+-------------------------------------------
+
+Tables are tricky and require more code than the previous elements, since they
+have many special tags that go along with them:
+
+
+- `<table>`
+    - outermost tag
+- `<thead>`
+    - desigantes the "zone" for the table head, e.g. the titles on the top row
+      of the table
+- `<th>`
+    - a single head, e.g. a column title
+    - **can hold content** *(e.g. p, a, img, etc)*
+- `<tbody>`
+    - designates the "zone" for the main content of the table
+- `<tr>`
+    - a single row of content in the table
+- `<td>`
+    - a single cell of content in the table
+    - **can hold content** *(e.g. p, a, img, etc)*
+
+
+----------------------------------
+
+
 Challenge 4: Table Time
 -------------------------------------------
 
-1. Open `challenge4.html` in your text editor and browser.
+This challenge introduces tables, which lets us arrange grid-like information,
+much like you'd see in a chart or spreadsheet.
+
+* Objective: Switch P tags to use TABLE, THEAD, TH, TBODY, TR, and TD tags
+
+1. Open [challenge4.html](./challenge4.html) in your text editor and browser.
 
 2. Examine the existing code.
-    - It displays the stats of tournament games for a top WTA player, Naomi Osaka.
-    - Currently, it uses 6 p-tags to display the information.
-    - We want to switch it to use 1 ul-tag and 6 li-tags instead.
+    - It displays the stats of tournament games for a famous tennis player,
+      Naomi Osaka.
+    - Currently, it displays one row correctly using a table
+    - After the correct table, it uses 3 p-tags incorrectly to display the
+      information.
+
+3. Observe how in the browser the top row is displayed in a correctly formatted
+table grid arrangement
+
+4. Make necessary code changes to change the P-tags into TR and TD tags
+
+
+Hint: Unsure of how to replace p-tags? Follow these steps:
+
+1. Move the `<p>` tag into the table, before the `</tbody>` tag
+
+2. Change the opening and closing `<p></p>` (paragraph) tag into the `<tr>
+</tr>` (table row) tag.
+
+3. In this case, wrap each line into table cell tags: `<td>` and `</td>`
+
+4. In the end, it should resemble the example already completed
 
 
 
+----------------------------------
 
+
+Challenge 4: Bonus Challenge
+-------------------------------------------
+
+Looking for more practice with tables? 
+
+* Objective: Add back in P tags for more nesting practice, to display the
+  country of each opponent on a separate line
+
+1. Return to the work on [challenge4.html](./challenge4.html) in your text
+editor and browser.
+
+2. Examine the following code snippet. This should replace the current `<td>`
+with Serena Williams' name.
+
+    <td>
+        <p>Serena Jameka Williams</p>
+        <p>(United States)</p>
+    </td>
+
+3. Examine the following list of countries and player names. These need to be
+formatted using code like the above:
+    - Petra Kvitová (Czechia)
+    - Victória Fyódarauna Azárenka (Belarus)
+    - Jennifer Elizabeth Brady (United States)
+
+4. Make necessary code changes to add back in P-tags to better format
+paragraphs within table cells
+
+
+Hint: Unsure of how nest p-tags? Follow these steps:
+
+1. Write a `<p>` tag after the `<td>` on a new line, indented even more
+
+2. Write the first line of text, followed by a `</p>` tag
+
+3. Repeat for the second P tag
 
