@@ -36,13 +36,11 @@ const firstNav = [
         title: "Multipage Sites",
         module: "2.1",
     },
-    /*
     {
         title: "Flex Layout",
         module: "2.2",
         completion: 50,
     },
-    */
     {
         title: "Lab: Multi-Page Projects",
         module: "2.3",
