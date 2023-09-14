@@ -13,6 +13,7 @@
     <div class="LessonPage-activity">
         <h2>{{ act.title }}</h2>
         <aside>
+            {% if act.instructionsPath %}
             <div class="slide-card">
                 <div class="slide-preview">
                     <x-Markdown 
@@ -25,23 +26,28 @@
                     View {{ act.title }} Slides
                 </a>
             </div>
+            {% endif %}
             <!--
             <a class="Btn" href="/slides.html?path={{ act.instructionsPathRawAbs }}">{{ act.title }} Instruction Slides</a>
             <a class="Btn" href="/slides.html?path={{ act.instructionsPathRawAbs }}">Open {{ act.title }} In Web Editor</a>
             -->
             <ul>
+                {% if act.instructionsPathRawAbs %}
                 <li>
                     <a href="{{ act.instructionsPathRawAbs }}">Open {{ act.title }} instructions (raw markdown, GitHub) &raquo;</a>
                 </li>
+                {% endif %}
                 <li>
                     <a href="{{ act.filesPathRawAbs }}">View {{ act.title }} code files (GitHub) &raquo;</a>
                 </li>
             </ul>
         </aside>
-        <figure>
-            <img src="/__screenshot{{ act.solutionPath }}.png" />
-            <a href="{{ act.solutionPath }}">View {{ act.title }} Solution</a>
-        </figure>
+        {% if act.solutionPath %}
+            <figure>
+                <img src="/__screenshot{{ act.solutionPath }}.png" />
+                <a href="{{ act.solutionPath }}">View {{ act.title }} Solution</a>
+            </figure>
+        {% endif %}
 
         {% comment %}
             <x-Markdown 

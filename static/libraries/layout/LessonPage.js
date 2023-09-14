@@ -63,6 +63,29 @@ function getActivitiesFromFiles(files, pathPrefix) {
                   activities[slug].solutionPath = fullPath;
               }
           }
+
+
+          // If its in a "guides" directory...
+          if (pathSplit[0] === 'guides' && pathSplit[1] && pathSplit[1].endsWith('.md')) {
+              const slug = pathSplit[1].split('.').shift();
+              if (!(slug in activities)) {
+                  activityNames.push(slug);
+                  const files = [ fullPath ];
+                  const solutionFiles = [ ];
+                  //const number = slug.replace(/\D+/g, '');
+                  const number = -1;
+                  const title = 'Guide: ' + slug;
+                  activities[slug] = { files, title, solutionFiles, slug, number };
+                  const firstDir = fullPath.replace(/^\//, '').split('/')[0];
+                  const dirName = fullPath.replace(/\/[\w\.]+$/, '').replace('/' + firstDir, '');
+                  activities[slug].filesPathRawAbs = `https://github.com/modulojs/${ firstDir }/tree/main${ dirName }`;
+              }
+              if (pathSplit[1].endsWith('.md')) {
+                  // Activity instructions were found
+                  activities[slug].instructionsPath = fullPath;
+                  activities[slug].instructionsPathRawAbs = 'https://modulojs.github.io' + fullPath;
+              }
+          }
       }
 
       // Now, ensure ordered, sorted by number in slug

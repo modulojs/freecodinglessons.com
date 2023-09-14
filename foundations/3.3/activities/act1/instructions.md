@@ -2,6 +2,7 @@
 
 ## Can you build the design by looking at the solution?
 
+- Use the tailwindui.md guide
 
 - Challenge mode: To truly put your skills to the test, carefully examine the
   solution in your browser, see how much of the solution you can recreate
