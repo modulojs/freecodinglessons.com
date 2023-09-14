@@ -1,2 +1,0 @@
-# freecodinglessons.com
-freecodinglessons.com
