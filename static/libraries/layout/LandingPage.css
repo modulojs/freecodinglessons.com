@@ -1,19 +1,47 @@
+
 .Page--landing {
     --navy: #113;
+    --primary: #113;
+    --shiny: #efefffaa;
+    --navy10: #11113316;
     --navy50: #11113388;
+    --navy70: #111133bb;
     background: white;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--navy);
+}
+
+
+.Page--landing h1 {
+    /* Will always be about 1/5 size */
+    font-size: 5vw;
+    color: var(--navy);
+}
+
+.Page--landing .shiny-top {
+    user-select: none;
+    text-align: center;
+    border: var(--shiny) solid 2px;
+    width: calc(100% + 100px);
+    padding: 40px;
+    /*background: #eaeaeaaa;*/
+    margin: 0;
+    margin-top: -43px; /* eat up padding */
+    margin-bottom: 2vh;
+    box-shadow:
+        25px 25px 30px inset var(--shiny),
+        -25px -25px 30px inset var(--navy10);
 }
 
 .Page--landing > h3,
 .Page--landing > * > h3 {
-    background: var(--primary);
-    width: 50%;
+    /*background: var(--primary);*/
+    background: var(--navy);
+    width: 60%;
     color: white;
     display: inline;
     padding: 10px;
@@ -26,7 +54,18 @@
     width: 350px;
     position: relative;
     background: var(--bordercolor);
-    padding: 20px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    transition: top 0.5s,
+                left 0.5s, 
+                box-shadow 0.5s;
+}
+
+.Page--landing .course-tile:hover {
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.5);
+    top: -5px;
+    left: -5px;
 }
 
 .Page--landing .course-tile > img {
@@ -35,23 +74,32 @@
 }
 
 .Page--landing .course-callout {
-    background: var(--primary);
+    /*background: var(--primary);*/
+    /*background: var(--navy70);*/
+    background: #ccc;
+    border: var(--shiny) solid 2px;
+    border-radius: 10px;
     position: absolute;
     top: -15px;
     right: -15px;
-    color: white;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin: 0;
-    padding: 0;
-    width: 40%;
+    width: 45%;
     padding: 10px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
 }
+.Page--landing .course-callout--highlight {
+    box-shadow:
+        25px 25px 30px inset var(--shiny),
+        -25px -25px 30px inset var(--navy10);
+
+}
 
 .Page--landing .course-callout > img {
-    width: 40%;
+    width: 25%;
     float: left;
 }
+
 
 .Page--landing .course-tile h4 {
     background: var(--bordercolor);
@@ -72,12 +120,11 @@
     width: 100%;
 }
 
-.Page--landing h4 {
 
-}
 
 .Page--landing .Btn--callToAction {
-    background: var(--primary);
+    /*background: var(--primary);*/
+    background: var(--navy);
     padding: 10px;
     margin: 10px;
     color: white;
@@ -92,12 +139,24 @@
 }
 
 .Page--landing .Btn--callToAction:hover {
-    box-shadow: 0 0 0 10px var(--bluebird);
+    box-shadow: 0 0 0 10px var(--navy50);
 }
 
-.Page--landing label {
+
+.Page--landing .Btn--callToAction::before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.Page--landing .helper-text {
     font-size: 0.9rem;
-    width: 50%;
+    width: 60%;
     display: inline-block;
     text-align: right;
     vertical-align: middle;

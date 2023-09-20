@@ -1,10 +1,14 @@
 :root {
-    --bluebird: #19B5FE;
-    --cerulean: #0698DC;
-    --sunshine: #FFD300;
-    --golden: #D9A400;
+    --navy: #113;
+    --shiny: #efefffaa;
+    --navy10: #11113316;
+    --navy50: #11113388;
+    --navy70: #111133bb;
+    --bluebird: #3050E0C0; /* alias for bluey */
+    --bluey: #3050E0C0;
+    --cerulean: var(--bluey); /* alias for bluey */
     --white: #ffffff;
-    --primary: var(--cerulean);
+    --primary: var(--bluey);
     --bordercolor: rgba(127, 127, 127, 0.5);
     --sidebar-width: 280px;
 }
@@ -16,6 +20,10 @@ html {
 
 html * {
     box-sizing: border-box;
+}
+
+.Page-container a {
+    color: var(--bluey);
 }
 
 .Page-container {

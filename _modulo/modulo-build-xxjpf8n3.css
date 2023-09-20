@@ -1,0 +1,731 @@
+:root {
+    --navy: #113;
+    --shiny: #efefffaa;
+    --navy10: #11113316;
+    --navy50: #11113388;
+    --navy70: #111133bb;
+    --bluebird: #3050E0C0; /* alias for bluey */
+    --bluey: #3050E0C0;
+    --cerulean: var(--bluey); /* alias for bluey */
+    --white: #ffffff;
+    --primary: var(--bluey);
+    --bordercolor: rgba(127, 127, 127, 0.5);
+    --sidebar-width: 280px;
+}
+
+html {
+    font-family: sans-serif;
+    background: url('/static/images/lowpoly_x4.jpg');
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+.Page-container a {
+    color: var(--bluey);
+}
+
+.Page-container {
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width) minmax(auto, 1920px) 1fr;
+    grid-template-rows: auto;
+    min-height: calc(100vh - 120px); /* 100px for footer */
+}
+
+.Page-container > :first-child {
+    grid-column: 2; /* First column is being used as margin */
+}
+
+.Page-mainContent {
+    grid-column: 3;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0;
+    box-shadow: 5px 5px 0 10px var(--bordercolor);
+    background: var(--white);
+}
+
+.Page-mainContent h1 {
+    border-bottom: 1px dotted var(--bordercolor);
+}
+
+.Page-mainContent code {
+    border-bottom: 1px dashed gray;
+}
+
+.Page-mainContent > slot > img {
+    min-height: 100px;
+}
+
+.Page-footer {
+    height: 100px;
+    text-align: center;
+    padding-top: 30px
+}
+
+.u--mobile {
+    display: none;
+}
+
+.u--desktop {
+    display: block;
+}
+
+.Page-toolbar {
+    padding: 5px;
+    background: var(--bordercolor);
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .Page-container {
+        display: block;
+    }
+    .u--mobile {
+        display: block;
+    }
+    .u--desktop {
+        display: none;
+    }
+}
+
+
+.Page--landing {
+    --navy: #113;
+    --primary: #113;
+    --shiny: #efefffaa;
+    --navy10: #11113316;
+    --navy50: #11113388;
+    --navy70: #111133bb;
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--navy);
+}
+
+
+.Page--landing h1 {
+    /* Will always be about 1/5 size */
+    font-size: 5vw;
+    color: var(--navy);
+}
+
+.Page--landing .shiny-top {
+    user-select: none;
+    text-align: center;
+    border: var(--shiny) solid 2px;
+    width: calc(100% + 100px);
+    padding: 40px;
+    /*background: #eaeaeaaa;*/
+    margin: 0;
+    margin-top: -43px; /* eat up padding */
+    margin-bottom: 2vh;
+    box-shadow:
+        25px 25px 30px inset var(--shiny),
+        -25px -25px 30px inset var(--navy10);
+}
+
+.Page--landing > h3,
+.Page--landing > * > h3 {
+    /*background: var(--primary);*/
+    background: var(--navy);
+    width: 60%;
+    color: white;
+    display: inline;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.Page--landing .course-tile {
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    position: relative;
+    background: var(--bordercolor);
+    padding: 10px;
+    top: 0;
+    left: 0;
+    transition: top 0.5s,
+                left 0.5s, 
+                box-shadow 0.5s;
+}
+
+.Page--landing .course-tile:hover {
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.5);
+    top: -5px;
+    left: -5px;
+}
+
+.Page--landing .course-tile > img {
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.Page--landing .course-callout {
+    /*background: var(--primary);*/
+    /*background: var(--navy70);*/
+    background: #ccc;
+    border: var(--shiny) solid 2px;
+    border-radius: 10px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 0.78rem;
+    margin: 0;
+    width: 45%;
+    padding: 10px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+}
+.Page--landing .course-callout--highlight {
+    box-shadow:
+        25px 25px 30px inset var(--shiny),
+        -25px -25px 30px inset var(--navy10);
+
+}
+
+.Page--landing .course-callout > img {
+    width: 25%;
+    float: left;
+}
+
+
+.Page--landing .course-tile h4 {
+    background: var(--bordercolor);
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    color: white;
+    font-size: 4.0rem;
+    margin: 0;
+    padding: 0;
+}
+
+.Page--landing img.course-tile--shading {
+    box-shadow: 
+                10px 10px 20px inset #ffffff99,
+                -5px -5px 10px inset #00000099,
+                5px 5px 30px inset #00000099;
+    width: 100%;
+}
+
+
+
+.Page--landing .Btn--callToAction {
+    /*background: var(--primary);*/
+    background: var(--navy);
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow:
+      -5px -5px 0 5px var(--bordercolor),
+      0 0 0 3px var(--bordercolor),
+      5px 5px 0 5px var(--bordercolor)
+      ;
+    transition: box-shadow 0.3s;
+}
+
+.Page--landing .Btn--callToAction:hover {
+    box-shadow: 0 0 0 10px var(--navy50);
+}
+
+
+.Page--landing .Btn--callToAction::before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.Page--landing .helper-text {
+    font-size: 0.9rem;
+    width: 60%;
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.Page--landing .course-tile-wrapper {
+    display: flex;
+}
+
+.Page--landing .course-tile-wrapper > * {
+    margin-right: 40px;
+    margin-top: 40px;
+}
+.Page--landing .course-tile-wrapper > *:last-child {
+    margin-right: 0;
+}
+
+
+
+.Page--landing .why-aside {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 3px;
+    color: var(--navy);
+    font-size: 0.85rem;
+}
+
+.wide-splash {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    box-sizing: border-box;
+    width: calc(100vw - 20px);
+    border: 3px solid var(--navy);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr;
+}
+    /*box-shadow: 
+        5px 5px 30px inset var(--navy50),
+        5px 5px 30px var(--navy50);*/
+
+.wide-splash h2 big {
+    font-size: 5rem;
+}
+
+.wide-splash h2 {
+    background: var(--navy);
+    color: white;
+    text-align: right;
+}
+
+.wide-splash h3,
+.wide-splash h2 {
+    padding: 5px;
+}
+
+.wide-splash h3,
+.wide-splash h4 {
+    color: var(--navy);
+}
+
+.wide-splash h3::before {
+    content: open-quote;
+}
+.wide-splash h3::after {
+    content: close-quote;
+}
+
+.wide-splash .questions h3 {
+    padding: 10px;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.why-aside img {
+    max-width: 100%;
+    border: 1px solid var(--bordercolor);
+    margin: 0;
+    box-shadow: 
+               -3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color);
+}
+
+
+.questions {
+    border-right: 1px dotted var(--navy);
+    padding: 5px;
+}
+
+.why-aside > div {
+    border-top: 1px solid var(--navy);
+}
+
+.why-aside > div > a {
+    text-align: center;
+    background: var(--bordercolor);
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 992px) {
+    .Page--landing .wide-splash {
+        display: block;
+    }
+    .Page--landing .course-tile-wrapper {
+        display: block;
+    }
+    .Page--landing .course-tile-wrapper > * {
+        margin: 0;
+        margin-top: 70px;
+    }
+
+}
+
+
+x-SlideShow {
+    --activity-shadow-color: #00000033;
+    --activity-shadow-spread: 5px;
+    box-sizing: border-box;
+    padding: 2px;
+    position: relative;
+    font-size: 1.5vw;
+    display: block;
+    width: calc(100vw - 20px);
+    height: calc(100vh - 100px);
+}
+
+x-SlideShow * {
+    box-sizing: border-box;
+}
+
+x-SlideShow .toolbar {
+    display: block;
+    display: flex;
+    font-size: 0.3vw;
+}
+
+x-SlideShow .current-slide-window {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+x-SlideShow .all-slides {
+    transition: margin-left 0.2s;
+    margin-left: calc(-100vw * var(--slide-offset));
+    height: 100%;
+    background: #fff;
+    display: flex;
+    width: calc(100vw * var(--slide-count));
+}
+
+x-SlideShow .slide-wrapper {
+    width: 100vw;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+}
+
+x-SlideShow .slide {
+    overflow-y: auto;
+    box-shadow: 3px 3px var(--activity-shadow-spread) var(--activity-shadow-color);
+    padding: 2vw;
+    height: 85vh;
+    width: calc(100vw - 28px);
+    border: 1px solid var(--activity-shadow-color);
+}
+
+
+x-SlideShow .toolbar button.slide-preview {
+    display: block;
+    overflow: hidden;
+    background: #ffffffaa;
+    max-width: 20%;
+    min-width: 100px;
+    min-height: 100px;
+    max-height: 15vh;
+    border: 2px solid white;
+}
+
+
+x-SlideShow .toolbar button.slide--selected {
+    background: #fff;
+    border: 2px solid var(--primary);
+    color: #888; /* 50% gray */
+}
+
+
+
+x-Slide {
+            --activity-shadow-color: #00000033;
+            --activity-shadow-spread: 5px;
+            display: block;
+            box-shadow: 3px  3px var(--activity-shadow-spread) var(--activity-shadow-color);
+            padding: 20px;
+            margin: 1px;
+            border: 1px solid var(--activity-shadow-color);
+            overflow-y: auto;
+        }
+    
+.LessonPage-activity {
+    --activity-shadow-color: #00000022;
+    --activity-shadow-spread: 2px;
+    --hover-shadow-color: #00000022;
+    --hover-shadow-spread: 5px;
+    --subtle-shadow-color: #0698DC22;
+    --subtle-shadow-spread: 75px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 2px  2px var(--activity-shadow-spread) inset var(--activity-shadow-color),
+               -2px -2px var(--activity-shadow-spread) inset var(--activity-shadow-color),
+                3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color);
+    border: 1px solid #00000016;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.LessonPage-activity h2 {
+    margin: 0;
+    padding: 3px;
+    background: var(--activity-shadow-color);
+    display: block;
+}
+
+.LessonPage-activity h2:first-child {
+    margin: -20px;
+    margin-bottom: 5px;
+    padding: 22px;
+    grid-column: span 2;
+}
+
+.LessonPage-activity > figure {
+    display: block;
+    max-width: 1044px;
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 
+               -3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                3px  3px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -3px -3px var(--activity-shadow-spread)       var(--activity-shadow-color);
+}
+
+.LessonPage-activity > figure > img {
+    max-width: 100%;
+    border: 1px solid var(--activity-shadow-color);
+}
+
+.LessonPage-activity > figure a {
+    position: absolute;
+    bottom: 10px;
+    left: -2px;
+    height: 35px;
+    width: calc(100% + 4px);
+    text-align: center;
+    background: var(--activity-shadow-color);
+    font-weight: bold;
+    /*color: #888; */
+    padding: 5px;
+    transition: box-shadow 0.2s;
+
+    box-shadow: 3px  3px var(--subtle-shadow-spread) inset var(--subtle-shadow-color),
+               -3px -3px var(--subtle-shadow-spread) inset var(--subtle-shadow-color),
+                3px  3px var(--subtle-shadow-spread)       var(--subtle-shadow-color),
+               -3px -3px var(--subtle-shadow-spread)       var(--subtle-shadow-color);
+}
+
+
+.slide-card {
+    display: block;
+    max-width: 1044px;
+    padding: 20px;
+    position: relative;
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 
+               -1px  1px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                1px -1px var(--activity-shadow-spread)       var(--activity-shadow-color),
+                1px  1px var(--activity-shadow-spread)       var(--activity-shadow-color),
+               -1px -1px var(--activity-shadow-spread)       var(--activity-shadow-color);
+}
+
+.slide-preview {
+    height: 250px;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.slide-card > a {
+    position: absolute;
+    bottom: 10px;
+    left: 2px;
+    height: calc(100% - 30px);
+    padding: 5px;
+    padding-top: 250px;
+    width: calc(100% - 4px);
+    text-align: center;
+    transition:
+        background 0.3s,
+        box-shadow 0.3s;
+    background: linear-gradient(#ffffff00, #fff);
+    font-weight: bold;
+    box-shadow: 
+               -1px  1px var(--activity-shadow-spread)       #fff,
+                1px -1px var(--activity-shadow-spread)       #fff,
+                1px  1px var(--activity-shadow-spread)       #fff,
+               -1px -1px var(--activity-shadow-spread)       #fff;
+}
+
+.slide-card > a:hover {
+    background: linear-gradient(var(--subtle-shadow-color), #fff);
+    box-shadow: 3px  3px var(--subtle-shadow-spread)       var(--subtle-shadow-color),
+               -3px -3px var(--subtle-shadow-spread)       var(--subtle-shadow-color);
+}
+
+/*
+.LessonPage-activity > figure a:hover {
+}
+*/
+
+x-LessonNav {
+    text-align: right;
+}
+
+x-LessonNav nav {
+}
+
+x-LessonNav ul {
+    position: sticky;
+    top: 0;
+}
+
+x-LessonNav li {
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+x-LessonNav h1,
+x-LessonNav h2 {
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000,
+				-1px -1px 0 #000;
+}
+
+x-LessonNav h2 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+x-LessonNav h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+x-LessonNav h1 .of {
+    font-size: 3.0rem;
+    font-style: italic;
+    font-weight: 100;
+    font-family: cursive, serif;
+    text-align: center;
+}
+
+x-LessonNav .Page-navLink {
+    color: black;
+    font-size: 1.4rem;
+    border: 2px solid var(--bordercolor);
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 5px var(--bordercolor);
+    background: white;
+    padding-left: 12px;
+}
+
+x-LessonNav .Page-navLink--link {
+    color: var(--primary);
+    font-size: 1.01rem;
+    border: none;
+    display: block;
+    padding: 0;
+    text-decoration: underline;
+    box-shadow: none;
+    background: none;
+    padding-left: 12px;
+
+}
+
+x-LessonNav .Page-navLink--selected {
+    background-color: var(--primary);
+    color: white;
+}
+
+x-LessonNav .Page-navLink--selected .Page-navLinkModule {
+	text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000;
+				-1px -1px 0 #000;
+}
+
+x-LessonNav .Page-navLinkModule {
+    font-weight: 800;
+    font-size: 1.8rem;
+    display: inline-block;
+    position: absolute;
+    left: -19px;
+    padding: 2px;
+    box-shadow: 0 0 0 5px var(--bordercolor);
+    background: var(--bordercolor);
+}
+
+x-LessonNav .Page-navLink:hover {
+    border-color: var(--primary);
+}
+
+x-LessonNav .Page-navLink--selected {
+}
+
+x-LessonNav .subnav {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--bordercolor);
+    display: block;
+    padding: 5px;
+    padding-left: 12px;
+    background: var(--bordercolor);
+    font-weight: bold;
+    color: white;
+}
+
+
+x-LessonNav .navbtn {
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid var(--bordercolor);
+    display: inline-block;
+    padding: 2px;
+    margin: 1px;
+    background: var(--bordercolor);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* You can put site-wide settings here. These will never be prefixed and
+** instead included verbatim. Component styles will be listed after. */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}

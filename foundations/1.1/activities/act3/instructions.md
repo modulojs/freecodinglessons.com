@@ -19,11 +19,14 @@ we use to specify the style and appearance of our HTML.
 - `p { color: green; }` CSS color property - One CSS "property" you can adjust
   is color, which controls the color of the text
 
+- *What colors are there?* There are many, many colors! [Mozilla's MDN
+  documentation has a list here.](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
+
 
 -------------
 
 
-Challenge 1: Turning the Frog Green
+Challenge 1: Turning the Frogs Green
 ----------------------------------
 
 Let's get with modifying a style tag to change the color of H1 tags.
@@ -32,10 +35,10 @@ Let's get with modifying a style tag to change the color of H1 tags.
 
 1. Open [challenge1.html](./challenge1.html) in your text editor and browser.
 2. Examine the existing code. It has a style tag that contains a single rule to
-style H1 tags with the color "orange".
-3. Observe how in the browser the H1 tag has orange text.
+style H1 tags with the color "pink".
+3. Observe how in the browser the H1 tag has pink text.
 4. The goal for Challenge 1 is to change the CSS code to make the H1 tag
-"green" instead of "orange".
+"green" instead of "pink".
 
 Hint 1: Don't over think this. You'll only need to make a single change in the
 "style-tag" near the top of the file.

@@ -11,7 +11,7 @@ all of the web: HTML.
 - HTML documents are a technical term for what makes up web pages. Every web
   page is a downloaded HTML document that is displayed in your browser.
 - If you learn the correct symbols and commands to use, then you can compose
-  HTML documents, and make turn your website dreams into a reality!
+  HTML documents, and turn your website dreams into website realities!
 
 
 -------------
